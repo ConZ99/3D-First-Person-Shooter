@@ -23,10 +23,19 @@ public class WeaponSwitch : MonoBehaviour
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
-                weaponNumber = (Mathf.Abs(weaponNumber + 1)) % weapons.Length;
+            {
+                weaponNumber = weaponNumber - 1;
+                if (weaponNumber == -1)
+                    weaponNumber = weapons.Length - 1;
+                
+            }
             else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
-                weaponNumber = (Mathf.Abs(weaponNumber - 1)) % weapons.Length;
-
+            {
+                weaponNumber = weaponNumber + 1;
+                if (weaponNumber == weapons.Length)
+                    weaponNumber = 0;
+            }
+            
             UpdateWeapon();
         }
     }

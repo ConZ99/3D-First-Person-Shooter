@@ -30,12 +30,16 @@ public class GunPistol : MonoBehaviour
     public float fireRate = 15f;
     private float nextTimeToFire = 0f;
 
+    private bool isDrawing = false;
+
     void Awake()
     {
         UI = player.transform.GetComponent<PlayerUI>();
         player.GetComponent<PlayerMovement>().animator = animator;
         isReloading = false;
         tacticalKnife.SetActive(false);
+
+        StartCoroutine(DrawCoroutine());
     }
 
     void OnEnable()
@@ -43,6 +47,8 @@ public class GunPistol : MonoBehaviour
         player.GetComponent<PlayerMovement>().animator = animator;
         isReloading = false;
         tacticalKnife.SetActive(false);
+
+        StartCoroutine(DrawCoroutine());
     }
 
     void Update()
@@ -54,9 +60,18 @@ public class GunPistol : MonoBehaviour
         CheckInput();
     }
 
+    IEnumerator DrawCoroutine()
+    {
+        isDrawing = true;
+        animator.SetBool("Draw", true);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Draw", false);
+        isDrawing = false;
+    }
+
     private void CheckInput()
     {
-        if (isReloading)
+        if ((isReloading) || isDrawing)
             return;
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
@@ -85,6 +100,7 @@ public class GunPistol : MonoBehaviour
     {
         RaycastHit hit_obj;
 
+        animator.SetTrigger("Fire");
         gunFlash.Stop();
         gunFlash.Play();
         fireSound.Play();
@@ -115,6 +131,7 @@ public class GunPistol : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime);
 

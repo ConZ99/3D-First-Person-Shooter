@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunAK : MonoBehaviour
+public class GunSniper : MonoBehaviour
 {
     public Camera fpsCamera;
     public GameObject player;
@@ -13,11 +13,11 @@ public class GunAK : MonoBehaviour
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
-    public float reloadTime = 3f;
+    public float reloadTime = 4f;
     private bool isReloading = false;
-    public int cartidgeCapacity = 30;
-    public int totalAmmo = 60;
-    private int currentAmmo = 30;
+    public int cartidgeCapacity = 10;
+    public int totalAmmo = 30;
+    private int currentAmmo = 10;
 
     public ParticleSystem gunFlash;
     public AudioSource fireSound;
@@ -27,7 +27,7 @@ public class GunAK : MonoBehaviour
     public GameObject tacticalKnife;
     public float recoilAmount = 0.01f;
 
-    public float fireRate = 15f;
+    public float fireRate = 2f;
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;

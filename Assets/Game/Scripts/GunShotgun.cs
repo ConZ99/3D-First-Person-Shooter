@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunAK : MonoBehaviour
+public class GunShotgun : MonoBehaviour
 {
     public Camera fpsCamera;
     public GameObject player;
@@ -13,11 +13,11 @@ public class GunAK : MonoBehaviour
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
-    public float reloadTime = 3f;
+    public float reloadTime = 6f;
     private bool isReloading = false;
-    public int cartidgeCapacity = 30;
-    public int totalAmmo = 60;
-    private int currentAmmo = 30;
+    public int cartidgeCapacity = 6;
+    public int totalAmmo = 32;
+    private int currentAmmo = 6;
 
     public ParticleSystem gunFlash;
     public AudioSource fireSound;
@@ -27,7 +27,7 @@ public class GunAK : MonoBehaviour
     public GameObject tacticalKnife;
     public float recoilAmount = 0.01f;
 
-    public float fireRate = 15f;
+    public float fireRate = 2f;
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
@@ -64,7 +64,7 @@ public class GunAK : MonoBehaviour
     {
         isDrawing = true;
         animator.SetBool("Draw", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("Draw", false);
         isDrawing = false;
     }
@@ -133,6 +133,7 @@ public class GunAK : MonoBehaviour
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
+        animator.SetTrigger("StartReload");
         yield return new WaitForSeconds(reloadTime);
         
         if (totalAmmo < cartidgeCapacity - currentAmmo)
@@ -148,6 +149,7 @@ public class GunAK : MonoBehaviour
 
         isReloading = false;
         animator.SetBool("Reloading", false);
+        animator.ResetTrigger("StartReload");
     }
 
     IEnumerator KnifeAttack()

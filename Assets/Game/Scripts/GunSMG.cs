@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunAK : MonoBehaviour
+public class GunSMG : MonoBehaviour
 {
     public Camera fpsCamera;
     public GameObject player;
