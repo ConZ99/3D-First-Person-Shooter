@@ -27,10 +27,11 @@ public class GunPistol : MonoBehaviour
     public GameObject tacticalKnife;
     public float recoilAmount = 0.01f;
 
-    public float fireRate = 15f;
+    public float fireRate = 5f;
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
+    private bool isMelee = false;
 
     void Awake()
     {
@@ -71,7 +72,7 @@ public class GunPistol : MonoBehaviour
 
     private void CheckInput()
     {
-        if ((isReloading) || isDrawing)
+        if ((isReloading) || isDrawing || isMelee)
             return;
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
@@ -154,6 +155,8 @@ public class GunPistol : MonoBehaviour
     {
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
+        isMelee = true;
+        Debug.Log("Da");
 
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
@@ -163,8 +166,10 @@ public class GunPistol : MonoBehaviour
                 target.TakeDamage(knifeDamage);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
+        isMelee = false;
+        Debug.Log("Nu");
     }
 }

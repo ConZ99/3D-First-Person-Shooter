@@ -31,6 +31,8 @@ public class GunSniper : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
+    private bool isAiming = false;
+    private bool wasAiming = false;
 
     void Awake()
     {
@@ -38,6 +40,9 @@ public class GunSniper : MonoBehaviour
         player.GetComponent<PlayerMovement>().animator = animator;
         isReloading = false;
         tacticalKnife.SetActive(false);
+        
+        isAiming = false;
+        animator.SetBool("Aiming", false);
 
         StartCoroutine(DrawCoroutine());
     }
@@ -47,6 +52,9 @@ public class GunSniper : MonoBehaviour
         player.GetComponent<PlayerMovement>().animator = animator;
         isReloading = false;
         tacticalKnife.SetActive(false);
+
+        isAiming = false;
+        animator.SetBool("Aiming", false);
 
         StartCoroutine(DrawCoroutine());
     }
@@ -89,10 +97,16 @@ public class GunSniper : MonoBehaviour
             Shoot();
             return;
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetKeyDown(KeyCode.F))
         {
             StartCoroutine(KnifeAttack());
             return;
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            isAiming = !isAiming;
+            wasAiming = isAiming;
+            animator.SetBool("Aiming", isAiming);
         }
     }
 
@@ -112,6 +126,7 @@ public class GunSniper : MonoBehaviour
 
         if (Physics.Raycast(fpsCamera.transform.position, dir, out hit_obj, range))
         {
+            Debug.Log(hit_obj.transform.name);
             Target target = hit_obj.transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
@@ -133,6 +148,11 @@ public class GunSniper : MonoBehaviour
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
+
+        wasAiming = isAiming;
+        isAiming = false;
+        animator.SetBool("Aiming", false);
+
         yield return new WaitForSeconds(reloadTime);
         
         if (totalAmmo < cartidgeCapacity - currentAmmo)
@@ -148,12 +168,19 @@ public class GunSniper : MonoBehaviour
 
         isReloading = false;
         animator.SetBool("Reloading", false);
+
+        isAiming = wasAiming;
+        animator.SetBool("Aiming", isAiming);
     }
 
     IEnumerator KnifeAttack()
     {
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
+
+        wasAiming = isAiming;
+        isAiming = false;
+        animator.SetBool("Aiming", wasAiming);
 
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
@@ -166,5 +193,8 @@ public class GunSniper : MonoBehaviour
         yield return new WaitForSeconds(1f);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
+
+        isAiming = wasAiming;
+        animator.SetBool("Aiming", isAiming);
     }
 }

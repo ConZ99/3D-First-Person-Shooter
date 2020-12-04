@@ -27,10 +27,11 @@ public class GunAK : MonoBehaviour
     public GameObject tacticalKnife;
     public float recoilAmount = 0.01f;
 
-    public float fireRate = 15f;
+    public float fireRate = 7f;
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
+    private bool isMelee = false;
 
     void Awake()
     {
@@ -71,7 +72,7 @@ public class GunAK : MonoBehaviour
 
     private void CheckInput()
     {
-        if (isReloading)
+        if (isReloading || isDrawing || isMelee)
             return;
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
@@ -134,7 +135,7 @@ public class GunAK : MonoBehaviour
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime);
-        
+
         if (totalAmmo < cartidgeCapacity - currentAmmo)
         {
             currentAmmo += totalAmmo;
@@ -152,8 +153,10 @@ public class GunAK : MonoBehaviour
 
     IEnumerator KnifeAttack()
     {
+
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
+        isMelee = true;
 
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
@@ -163,8 +166,10 @@ public class GunAK : MonoBehaviour
                 target.TakeDamage(knifeDamage);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
+        isMelee = false;
     }
+  
 }
