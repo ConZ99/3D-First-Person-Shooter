@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
     private Target target;
-    public Text textboxHp;
-    public Text textboxArmor;
-    public Text textboxAmmo;
-    public Text textboxCounter;
+    public TextMeshProUGUI textboxHp;
+    public TextMeshProUGUI textboxArmor;
+    public TextMeshProUGUI textboxAmmo;
+    public TextMeshProUGUI textboxCounter;
 
     void Awake()
     {
