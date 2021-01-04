@@ -46,6 +46,7 @@ public class GunAK : MonoBehaviour
     void OnEnable()
     {
         player.GetComponent<PlayerMovement>().animator = animator;
+        fireSound.Pause();
         isReloading = false;
         tacticalKnife.SetActive(false);
 
