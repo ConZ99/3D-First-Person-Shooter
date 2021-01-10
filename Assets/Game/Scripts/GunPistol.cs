@@ -114,7 +114,8 @@ public class GunPistol : MonoBehaviour
 
         if (Physics.Raycast(fpsCamera.transform.position, dir, out hit_obj, range))
         {
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
 
@@ -124,6 +125,11 @@ public class GunPistol : MonoBehaviour
                 Quaternion holeRortation = Quaternion.FromToRotation(Vector3.up, hit_obj.normal);
                 Instantiate(bulletHole, holePosition, holeRortation);
 
+                GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
+                Destroy(impactObj, 2f);
+            }
+            else if (root_obj.CompareTag("Enemy"))
+            {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }
@@ -157,7 +163,6 @@ public class GunPistol : MonoBehaviour
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
         isMelee = true;
-        Debug.Log("Da");
 
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
@@ -171,6 +176,5 @@ public class GunPistol : MonoBehaviour
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
         isMelee = false;
-        Debug.Log("Nu");
     }
 }
