@@ -21,11 +21,8 @@ public class AIGun : MonoBehaviour
 
     public float knifeDamage = 50f;
 
-    public bool isRifle;
-
     private void OnEnable()
     {
-        animator.SetBool("IsRifle", isRifle);
         isReloading = false;
     }
 
@@ -65,7 +62,7 @@ public class AIGun : MonoBehaviour
     }
 
 
-    public void Shoot()
+    public void Shoot(GameObject enemy)
     {
         if (isReloading || currentAmmo < 0)
             return;
@@ -75,8 +72,9 @@ public class AIGun : MonoBehaviour
         fireSound.Play();
         currentAmmo--;
 
+        Vector3 dir = (enemy.transform.position - transform.position).normalized;
         RaycastHit hit_obj;
-        if (Physics.Raycast(transform.position, transform.forward, out hit_obj, range))
+        if (Physics.Raycast(transform.position, dir, out hit_obj, range))
         {
             Target target = hit_obj.transform.GetComponent<Target>();
             if (target != null)
