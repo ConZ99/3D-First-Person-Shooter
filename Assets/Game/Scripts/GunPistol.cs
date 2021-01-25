@@ -167,7 +167,8 @@ public class GunPistol : MonoBehaviour
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
         {
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(knifeDamage);
         }

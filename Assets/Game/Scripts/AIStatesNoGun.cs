@@ -87,7 +87,7 @@ public class AIStatesNoGun : MonoBehaviour
         {
             Target target = hit_obj.transform.GetComponent<Target>();
             if (target != null)
-                target.TakeDamage(50f);
+                target.TakeDamage(10f);
         }
 
         yield return new WaitForSeconds(1f);

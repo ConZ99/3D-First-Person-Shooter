@@ -6,7 +6,7 @@ public class AIGun : MonoBehaviour
 {
     public Animator animator;
 
-    public float damage = 25f;
+    public float damage = 1f;
     public float range = 100f;
     public int cartidgeCapacity = 7;
     public int totalAmmo = 21;

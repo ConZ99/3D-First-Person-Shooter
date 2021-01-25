@@ -20389,6 +20389,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1383732917993218530, guid: f76163db3680b714b9bf28d041dc35cf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383732917993218530, guid: f76163db3680b714b9bf28d041dc35cf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383732917993218530, guid: f76163db3680b714b9bf28d041dc35cf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1383732917993218531, guid: f76163db3680b714b9bf28d041dc35cf,
         type: 3}
       propertyPath: textboxHp
