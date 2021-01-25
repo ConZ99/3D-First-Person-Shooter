@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -8,15 +9,9 @@ public class OptionsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     private Resolution[] resolutions;
     public Dropdown resolutionDropdown;
-    public Slider volumeSlider;
-    public Toggle fullscreenToggle;
-    public Dropdown qualityDropdown;
-
-    private int currentResolution = -1;
 
     private void Start()
     {
-        //Setare rezolutii posibile
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -32,31 +27,10 @@ public class OptionsMenu : MonoBehaviour
                 currentIndex = i;
         }
         resolutionDropdown.AddOptions(options);
-
-        //Setare rezolutie curenta
-        if (currentResolution != -1)
-        {
-            SetResolution(currentResolution);
-            resolutionDropdown.value = currentResolution;
-        }
-        else
-        {
-            SetResolution(currentIndex);
-            resolutionDropdown.value = currentIndex;
-        }
+        resolutionDropdown.value = currentIndex;
         resolutionDropdown.RefreshShownValue();
 
-        //Setare grafica
-        qualityDropdown.value = QualitySettings.GetQualityLevel();
-        qualityDropdown.RefreshShownValue();
-
-        //Setare volum
-        audioMixer.GetFloat("volume", out float soundVal);
-        volumeSlider.value = soundVal;
-
-        //Setare fullscreen
-        bool isFullscreen = Screen.fullScreen;
-        fullscreenToggle.isOn = isFullscreen;
+        QualitySettings.SetQualityLevel(3);
     }
 
     public void SetVolume(float amount)
@@ -73,12 +47,10 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-        currentResolution = resolutionIndex;
     }
 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        Debug.Log("setat:" + QualitySettings.GetQualityLevel());
     }
 }

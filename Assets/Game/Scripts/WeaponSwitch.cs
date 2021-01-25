@@ -20,9 +20,6 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused == true)
-            return;
-
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)

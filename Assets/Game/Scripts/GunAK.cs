@@ -74,9 +74,7 @@ public class GunAK : MonoBehaviour
     private void CheckInput()
     {
         if (isReloading || isDrawing || isMelee)
-        {
             return;
-        }
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
             StartCoroutine(Reload());
@@ -116,22 +114,16 @@ public class GunAK : MonoBehaviour
 
         if (Physics.Raycast(fpsCamera.transform.position, dir, out hit_obj, range))
         {
-            Transform root_obj = hit_obj.transform.root;
-            Target target = (root_obj).transform.GetComponent<Target>();
+            Target target = hit_obj.transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
 
-            if (hit_obj.transform.CompareTag("Environment"))
+            if (hit_obj.transform.tag == "Environment")
             {
                 Vector3 holePosition = hit_obj.point + 0.011f * hit_obj.normal;
                 Quaternion holeRortation = Quaternion.FromToRotation(Vector3.up, hit_obj.normal);
                 Instantiate(bulletHole, holePosition, holeRortation);
 
-                GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
-                Destroy(impactObj, 2f);
-            }
-            else if (root_obj.CompareTag("Enemy"))
-            {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }

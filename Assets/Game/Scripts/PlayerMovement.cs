@@ -41,11 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (PauseMenu.isPaused)
-        {
-            walkingSound.Stop();
-            runningSound.Stop();
             return;
-        }
 
         CheckIfGrounded();
         CheckKeyPressed();
