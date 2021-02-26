@@ -10,6 +10,8 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     private float xRotation = 0f;
 
+    public Interactable focus;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -29,5 +31,30 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+
+        InteractNPC();
+    }
+
+    private void InteractNPC()
+    {
+        if (Input.GetKeyDown("f"))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 2))
+            {
+                Interactable inter = hit.collider.GetComponent<Interactable>();
+                if(inter != null)
+                {
+                    SetFocus(inter);
+                    inter.follow = true;
+                }
+            }
+        }
+    }
+
+    void SetFocus(Interactable newFocus)
+    {
+        focus = newFocus;
     }
 }
