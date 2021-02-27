@@ -12,6 +12,8 @@ public class WeaponSwitch : MonoBehaviour
 
     private Color tempColor;
 
+    public GunSniper sniperScript;
+
     void Start()
     {
         weaponNumber = 0;
@@ -22,6 +24,10 @@ public class WeaponSwitch : MonoBehaviour
     {
         if (PauseMenu.isPaused == true)
             return;
+
+        if (sniperScript.isAiming == true)
+            return;
+
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {

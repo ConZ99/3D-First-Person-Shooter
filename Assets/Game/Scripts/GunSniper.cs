@@ -31,8 +31,13 @@ public class GunSniper : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
-    private bool isAiming = false;
+    public bool isAiming = false;
     private bool wasAiming = false;
+    public GameObject scope;
+    public GameObject weaponCamera;
+
+    public Camera mainCamera;
+    private float mainCameraFOV = 60f;
 
     void Awake()
     {
@@ -43,6 +48,7 @@ public class GunSniper : MonoBehaviour
         
         isAiming = false;
         animator.SetBool("Aiming", false);
+        mainCameraFOV = 60f;
 
         StartCoroutine(DrawCoroutine());
     }
@@ -55,8 +61,16 @@ public class GunSniper : MonoBehaviour
 
         isAiming = false;
         animator.SetBool("Aiming", false);
+        mainCameraFOV = 60f;
 
         StartCoroutine(DrawCoroutine());
+    }
+
+    private void OnDisable()
+    {
+        scope.SetActive(false);
+        weaponCamera.SetActive(true);
+        mainCameraFOV = 60f;
     }
 
     void Update()
@@ -64,8 +78,28 @@ public class GunSniper : MonoBehaviour
         if ((PauseMenu.isPaused) || isDrawing)
             return;
 
+        CheckScope();
         UI.DisplayAmmo(currentAmmo, totalAmmo);
         CheckInput();
+    }
+
+    void CheckScope()
+    {
+        if (isAiming)
+        {
+            scope.SetActive(true);
+            weaponCamera.SetActive(false);
+            mainCameraFOV -= 50 * Input.GetAxis("Mouse ScrollWheel");
+            mainCameraFOV = Mathf.Clamp(mainCameraFOV, 30f, 60f);
+        }
+        else
+        {
+            scope.SetActive(false);
+            weaponCamera.SetActive(true);
+            mainCameraFOV = 60f;
+        }
+
+        mainCamera.fieldOfView = mainCameraFOV;
     }
 
     IEnumerator DrawCoroutine()
