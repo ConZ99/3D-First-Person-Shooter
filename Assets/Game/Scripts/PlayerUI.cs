@@ -10,7 +10,8 @@ public class PlayerUI : MonoBehaviour
     public TextMeshProUGUI textboxHp;
     public TextMeshProUGUI textboxArmor;
     public TextMeshProUGUI textboxAmmo;
-    public TextMeshProUGUI textboxCounter;
+    public TextMeshProUGUI textboxCounterEnemies;
+    public TextMeshProUGUI textboxCounterQuests;
 
     void Awake()
     {
@@ -49,6 +50,11 @@ public class PlayerUI : MonoBehaviour
 
     public void DisplayEnemiesCounter(int currentNumber, int totalNumber)
     {
-        textboxCounter.text = "<b><color=#ffffffff>" + "Enemies left: " + currentNumber + "/" + totalNumber + "</color></b>";
+        textboxCounterEnemies.text = "<b><color=#ffffffff>" + "Enemies left: " + currentNumber + "/" + totalNumber + "</color></b>";
+    }
+
+    public void DisplayQuestCounter(int currentNumber, int totalNumber)
+    {
+        textboxCounterQuests.text = "<b><color=#ffffffff>" + "Task left: " + currentNumber + "/" + totalNumber + "</color></b>";
     }
 }

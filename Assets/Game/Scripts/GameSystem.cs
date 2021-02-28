@@ -10,6 +10,11 @@ public class GameSystem : MonoBehaviour
     private GameObject[] enemies;
     private int totalEnemiesNumber = 0;
     private int enemiesNumber = 0;
+
+    private GameObject[] qtItems;
+    private int totalQtItemsNumber = 0;
+    private int qtItemsNumber = 0;
+
     public PauseMenu pauseMenu;
 
     void Awake()
@@ -19,6 +24,10 @@ public class GameSystem : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemiesNumber = enemies.Length;
         enemiesNumber = 0;
+
+        qtItems = GameObject.FindGameObjectsWithTag("Quest");
+        totalQtItemsNumber = qtItems.Length;
+        qtItemsNumber = 0;
     }
 
     void Update()
@@ -28,6 +37,7 @@ public class GameSystem : MonoBehaviour
 
         CheckEnd();
         playerUI.DisplayEnemiesCounter(enemiesNumber, totalEnemiesNumber);
+        playerUI.DisplayQuestCounter(qtItemsNumber, totalQtItemsNumber);
     }
 
     void CheckEnd()
@@ -35,14 +45,17 @@ public class GameSystem : MonoBehaviour
         if (playerStats.health <= 0)
         {
             playerUI.DisplayHealth();
-            pauseMenu.GameLost();
+            //pauseMenu.GameLost();
         }
         else
         {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
             enemiesNumber = enemies.Length;
-            if (enemiesNumber == 0)
-                pauseMenu.GameWin();
+
+            qtItems = GameObject.FindGameObjectsWithTag("Quest");
+            qtItemsNumber = qtItems.Length;
+            if (qtItemsNumber == 0);
+                //pauseMenu.GameWin();
         }
     }
 }

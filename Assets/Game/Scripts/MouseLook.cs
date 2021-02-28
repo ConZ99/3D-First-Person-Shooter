@@ -44,6 +44,7 @@ public class MouseLook : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 2))
             {
                 Interactable inter = hit.collider.GetComponent<Interactable>();
+                inter.transform.gameObject.tag = "Untagged";
                 if(inter != null)
                 {
                     SetFocus(inter);
