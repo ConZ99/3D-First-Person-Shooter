@@ -13,6 +13,7 @@ public class GunAK : MonoBehaviour
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
+    public float knifeTime = 2f;
     public float reloadTime = 3f;
     private bool isReloading = false;
     public int cartidgeCapacity = 30;
@@ -176,7 +177,7 @@ public class GunAK : MonoBehaviour
                 target.TakeDamage(knifeDamage);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(knifeTime);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
         isMelee = false;

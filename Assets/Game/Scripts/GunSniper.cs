@@ -13,6 +13,7 @@ public class GunSniper : MonoBehaviour
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
+    public float knifeTime = 2f;
     public float reloadTime = 4f;
     private bool isReloading = false;
     public int cartidgeCapacity = 10;
@@ -31,6 +32,8 @@ public class GunSniper : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
+    private bool isMelee = false;
+
     public bool isAiming = false;
     private bool wasAiming = false;
     public GameObject scope;
@@ -38,6 +41,9 @@ public class GunSniper : MonoBehaviour
 
     public Camera mainCamera;
     private float mainCameraFOV = 60f;
+
+    public float maxFOV = 60f;
+    public float minFOV = 15f;
 
     void Awake()
     {
@@ -90,7 +96,7 @@ public class GunSniper : MonoBehaviour
             scope.SetActive(true);
             weaponCamera.SetActive(false);
             mainCameraFOV -= 50 * Input.GetAxis("Mouse ScrollWheel");
-            mainCameraFOV = Mathf.Clamp(mainCameraFOV, 30f, 60f);
+            mainCameraFOV = Mathf.Clamp(mainCameraFOV, minFOV, maxFOV);
         }
         else
         {
@@ -113,8 +119,10 @@ public class GunSniper : MonoBehaviour
 
     private void CheckInput()
     {
-        if (isReloading)
+        if (isReloading || isDrawing || isMelee)
+        {
             return;
+        }
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
             StartCoroutine(Reload());
@@ -125,7 +133,7 @@ public class GunSniper : MonoBehaviour
             StartCoroutine(Reload());
             return;
         }
-        else if (Input.GetButton("Fire1") && currentAmmo > 0 && Time.time >= nextTimeToFire)
+        else if (Input.GetButtonDown("Fire1") && currentAmmo > 0 && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + (1f / fireRate);
             Shoot();
@@ -160,8 +168,8 @@ public class GunSniper : MonoBehaviour
 
         if (Physics.Raycast(fpsCamera.transform.position, dir, out hit_obj, range))
         {
-            Debug.Log(hit_obj.transform.name);
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
 
@@ -211,6 +219,7 @@ public class GunSniper : MonoBehaviour
     {
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
+        isMelee = true;
 
         wasAiming = isAiming;
         isAiming = false;
@@ -219,16 +228,18 @@ public class GunSniper : MonoBehaviour
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
         {
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(knifeDamage);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(knifeTime);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
 
         isAiming = wasAiming;
         animator.SetBool("Aiming", isAiming);
+        isMelee = false;
     }
 }

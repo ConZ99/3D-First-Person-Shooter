@@ -13,6 +13,7 @@ public class GunShotgun : MonoBehaviour
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
+    public float knifeTime = 2f;
     public float reloadTime = 6f;
     private bool isReloading = false;
     public int cartidgeCapacity = 6;
@@ -31,6 +32,7 @@ public class GunShotgun : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
+    private bool isMelee = false;
 
     void Awake()
     {
@@ -71,8 +73,10 @@ public class GunShotgun : MonoBehaviour
 
     private void CheckInput()
     {
-        if (isReloading)
+        if (isReloading || isDrawing || isMelee)
+        {
             return;
+        }
         else if (currentAmmo <= 0 && totalAmmo > 0)
         {
             StartCoroutine(Reload());
@@ -112,7 +116,8 @@ public class GunShotgun : MonoBehaviour
 
         if (Physics.Raycast(fpsCamera.transform.position, dir, out hit_obj, range))
         {
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
 
@@ -133,7 +138,6 @@ public class GunShotgun : MonoBehaviour
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
-        animator.SetTrigger("StartReload");
         yield return new WaitForSeconds(reloadTime);
         
         if (totalAmmo < cartidgeCapacity - currentAmmo)
@@ -149,24 +153,26 @@ public class GunShotgun : MonoBehaviour
 
         isReloading = false;
         animator.SetBool("Reloading", false);
-        animator.ResetTrigger("StartReload");
     }
 
     IEnumerator KnifeAttack()
     {
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
+        isMelee = true;
 
         RaycastHit hit_obj;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit_obj, knifeRange))
         {
-            Target target = hit_obj.transform.GetComponent<Target>();
+            Transform root_obj = hit_obj.transform.root;
+            Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(knifeDamage);
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(knifeTime);
         animator.SetBool("Melee", false);
         tacticalKnife.SetActive(false);
+        isMelee = false;
     }
 }

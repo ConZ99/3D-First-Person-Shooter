@@ -54,7 +54,7 @@ public class GameSystem : MonoBehaviour
 
             qtItems = GameObject.FindGameObjectsWithTag("Quest");
             qtItemsNumber = qtItems.Length;
-            if (qtItemsNumber == 0);
+            //if (qtItemsNumber == 0)
                 //pauseMenu.GameWin();
         }
     }
