@@ -9,6 +9,8 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 2f;
     public Transform playerBody;
     private float xRotation = 0f;
+    private GameObject[] qtItems;
+    private int totalQtItemsNumber = 0;
 
     public Interactable focus;
 
@@ -32,10 +34,10 @@ public class MouseLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
 
-        InteractNPC();
+        Interact();
     }
 
-    private void InteractNPC()
+    private void Interact()
     {
         if (Input.GetKeyDown("f"))
         {
@@ -44,11 +46,27 @@ public class MouseLook : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 2))
             {
                 Interactable inter = hit.collider.GetComponent<Interactable>();
-                inter.transform.gameObject.tag = "Untagged";
                 if(inter != null)
                 {
-                    SetFocus(inter);
-                    inter.follow = true;
+                    if(inter.transform.gameObject.tag == "Quest")
+                    {
+                        SetFocus(inter);
+                        inter.follow = true;
+                        GameObject door = GameObject.Find("Door");
+                        //fa cumva ca sa dai enable la iconita o data ce ai completat questul local.                        
+                    }
+                    else if(inter.transform.gameObject.tag == "Door")
+                    {
+                        
+                        qtItems = GameObject.FindGameObjectsWithTag("Quest");
+                        totalQtItemsNumber = qtItems.Length;
+                        if (totalQtItemsNumber == 0)
+                        {
+                            SetFocus(inter);
+                            inter.InteractDoor();
+                        }
+                    }
+                    inter.transform.gameObject.tag = "Untagged";
                 }
             }
         }

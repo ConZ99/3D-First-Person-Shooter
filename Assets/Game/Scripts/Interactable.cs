@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
@@ -68,5 +69,11 @@ public class Interactable : MonoBehaviour
         Quaternion rotation_body = Quaternion.LookRotation(direction);
 
         transform.rotation = rotation_body;
+    }
+
+    public void InteractDoor()
+    {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("merge!!!");
     }
 }
