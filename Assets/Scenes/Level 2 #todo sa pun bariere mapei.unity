@@ -73175,26 +73175,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Player & UI
       objectReference: {fileID: 0}
-    - target: {fileID: 532419035676917079, guid: f2347cc07f6cd0347909a5ac832f6011,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088163527798396448, guid: f2347cc07f6cd0347909a5ac832f6011,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4088163528125472754, guid: f2347cc07f6cd0347909a5ac832f6011,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4574221633876033257, guid: f2347cc07f6cd0347909a5ac832f6011,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4619070118405237862, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
       propertyPath: m_LocalPosition.x
