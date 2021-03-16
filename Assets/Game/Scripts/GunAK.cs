@@ -34,6 +34,8 @@ public class GunAK : MonoBehaviour
     private bool isDrawing = false;
     private bool isMelee = false;
 
+    public AudioSource reloadSound;
+
     void Awake()
     {
         UI = player.transform.GetComponent<PlayerUI>();
@@ -142,6 +144,7 @@ public class GunAK : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
+        reloadSound.Play();
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime);
