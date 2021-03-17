@@ -12,6 +12,10 @@ public class Interactable : MonoBehaviour
     public NavMeshAgent nav;
     public Transform currentWaypoint = null;
     public AudioSource walkingSound;
+    public bool story = false;
+    public static bool isPaused = false;
+    private GameObject[] qtItems;
+    GameObject storyText;
 
     void OnDrawGizmosSelected()
     {
@@ -22,6 +26,12 @@ public class Interactable : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        qtItems = GameObject.FindGameObjectsWithTag("Story");
+        if (qtItems.Length == 1){
+            storyText = qtItems[0];
+            storyText.SetActive(false);
+        }
+        Debug.Log(qtItems.Length);
     }
 
     void Update()
@@ -41,6 +51,43 @@ public class Interactable : MonoBehaviour
             else if (distance > 3f)
                 MoveToTarget(target);
         }
+
+        StoryCheck();
+    }
+
+    void pause()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    void resume()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+        story = false;
+        storyText.SetActive(false);
+    }
+
+    void StoryCheck()
+    {
+        if (story)
+        {
+            StoryShow();
+            if (isPaused == false)
+                pause();
+            else
+                if (Input.GetKeyDown(KeyCode.Return))
+                    resume();
+        }
+    }
+
+    void StoryShow()
+    {
+        if (qtItems.Length != 0){
+            
+            storyText.SetActive(true);
+        }        
     }
 
     public void MoveToTarget(GameObject target)

@@ -9,6 +9,7 @@ TagManager:
   - Ammo
   - Quest
   - Door
+  - Story
   layers:
   - Default
   - TransparentFX

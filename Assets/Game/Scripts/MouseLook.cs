@@ -52,6 +52,7 @@ public class MouseLook : MonoBehaviour
                     {
                         SetFocus(inter);
                         inter.follow = true;
+                        inter.story = true;
                         GameObject door = GameObject.Find("Door");
                         //fa cumva ca sa dai enable la iconita o data ce ai completat questul local.                        
                     }
