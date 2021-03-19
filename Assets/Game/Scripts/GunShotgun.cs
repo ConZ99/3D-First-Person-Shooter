@@ -28,11 +28,13 @@ public class GunShotgun : MonoBehaviour
     public GameObject tacticalKnife;
     public float recoilAmount = 0.01f;
 
-    public float fireRate = 2f;
+    public float fireRate = 0.5f;
     private float nextTimeToFire = 0f;
 
     private bool isDrawing = false;
     private bool isMelee = false;
+
+    public AudioSource reloadSound;
 
     void Awake()
     {
@@ -146,6 +148,8 @@ public class GunShotgun : MonoBehaviour
 
     IEnumerator Reload()
     {
+        fireSound.Stop();
+        reloadSound.Play();
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);

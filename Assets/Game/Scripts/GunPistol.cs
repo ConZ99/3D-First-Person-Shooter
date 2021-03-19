@@ -34,6 +34,8 @@ public class GunPistol : MonoBehaviour
     private bool isDrawing = false;
     private bool isMelee = false;
 
+    public AudioSource reloadSound;
+
     void Awake()
     {
         UI = player.transform.GetComponent<PlayerUI>();
@@ -139,6 +141,7 @@ public class GunPistol : MonoBehaviour
 
     IEnumerator Reload()
     {
+        reloadSound.Play();
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);

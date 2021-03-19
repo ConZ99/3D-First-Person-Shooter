@@ -34,6 +34,8 @@ public class GunSniper : MonoBehaviour
     private bool isDrawing = false;
     private bool isMelee = false;
 
+    public AudioSource reloadSound;
+
     public bool isAiming = false;
     private bool wasAiming = false;
     public GameObject scope;
@@ -187,6 +189,7 @@ public class GunSniper : MonoBehaviour
 
     IEnumerator Reload()
     {
+        reloadSound.Play();
         isReloading = true;
         animator.ResetTrigger("Fire");
         animator.SetBool("Reloading", true);
