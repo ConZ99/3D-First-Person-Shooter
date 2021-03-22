@@ -35,6 +35,7 @@ public class GunPistol : MonoBehaviour
     private bool isMelee = false;
 
     public AudioSource reloadSound;
+    public AudioSource drawSound;
 
     void Awake()
     {
@@ -67,6 +68,7 @@ public class GunPistol : MonoBehaviour
 
     IEnumerator DrawCoroutine()
     {
+        drawSound.Play();
         isDrawing = true;
         animator.SetBool("Draw", true);
         yield return new WaitForSeconds(0.5f);
