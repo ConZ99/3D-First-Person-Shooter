@@ -22614,6 +22614,7 @@ MonoBehaviour:
   tacticalKnife: {fileID: 532419035724566069}
   recoilAmount: 0.01
   fireRate: 1
+  reloadSound: {fileID: 0}
 --- !u!82 &533654651790817558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38532,6 +38533,7 @@ MonoBehaviour:
   recoilAmount: 0.01
   fireRate: 7
   reloadSound: {fileID: 0}
+  drawSound: {fileID: 0}
 --- !u!82 &4574221633766140828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44735,6 +44737,8 @@ MonoBehaviour:
   tacticalKnife: {fileID: 8897567410390630290}
   recoilAmount: 0.01
   fireRate: 5
+  reloadSound: {fileID: 0}
+  drawSound: {fileID: 0}
 --- !u!82 &4574221634550933722
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44996,7 +45000,7 @@ GameObject:
   - component: {fileID: 4574221634710060836}
   - component: {fileID: 4574221634710060838}
   - component: {fileID: 4574221634710060839}
-  m_Layer: 9
+  m_Layer: 5
   m_Name: Player Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50966,6 +50970,7 @@ MonoBehaviour:
   tacticalKnife: {fileID: 532419035443205807}
   recoilAmount: 0
   fireRate: 0.5
+  reloadSound: {fileID: 0}
   isAiming: 0
   scope: {fileID: 532419035000438308}
   weaponCamera: {fileID: 532419036249001717}

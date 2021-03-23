@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletHole : MonoBehaviour
 {
-    public float timeToLive = 30f;
+    public float timeToLive = 10f;
     private float timer;
 
     void Start()
@@ -19,6 +19,6 @@ public class BulletHole : MonoBehaviour
 
         timer -= Time.deltaTime;
         if (timer < 0)
-            Destroy(this);
+            Destroy(this.gameObject);
     }
 }
