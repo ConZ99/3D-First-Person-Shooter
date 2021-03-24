@@ -35,6 +35,9 @@ public class GunSniper : MonoBehaviour
     private bool isMelee = false;
 
     public AudioSource reloadSound;
+    public AudioSource drawSound;
+    public AudioSource knifeSound;
+    public AudioSource scopeSound;
 
     public bool isAiming = false;
     private bool wasAiming = false;
@@ -112,6 +115,7 @@ public class GunSniper : MonoBehaviour
 
     IEnumerator DrawCoroutine()
     {
+        drawSound.Play();
         isDrawing = true;
         animator.SetBool("Draw", true);
         yield return new WaitForSeconds(1);
@@ -148,6 +152,7 @@ public class GunSniper : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1))
         {
+            scopeSound.Play();
             isAiming = !isAiming;
             wasAiming = isAiming;
             animator.SetBool("Aiming", isAiming);
@@ -220,6 +225,7 @@ public class GunSniper : MonoBehaviour
 
     IEnumerator KnifeAttack()
     {
+        knifeSound.Play();
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
         isMelee = true;

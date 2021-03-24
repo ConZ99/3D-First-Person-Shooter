@@ -35,6 +35,8 @@ public class GunShotgun : MonoBehaviour
     private bool isMelee = false;
 
     public AudioSource reloadSound;
+    public AudioSource drawSound;
+    public AudioSource knifeSound;
 
     void Awake()
     {
@@ -66,6 +68,7 @@ public class GunShotgun : MonoBehaviour
 
     IEnumerator DrawCoroutine()
     {
+        drawSound.Play();
         isDrawing = true;
         animator.SetBool("Draw", true);
         yield return new WaitForSeconds(0.5f);
@@ -148,7 +151,6 @@ public class GunShotgun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        fireSound.Stop();
         reloadSound.Play();
         isReloading = true;
         animator.ResetTrigger("Fire");
@@ -172,6 +174,7 @@ public class GunShotgun : MonoBehaviour
 
     IEnumerator KnifeAttack()
     {
+        knifeSound.Play();
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
         isMelee = true;

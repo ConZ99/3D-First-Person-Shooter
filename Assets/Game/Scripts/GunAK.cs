@@ -36,6 +36,7 @@ public class GunAK : MonoBehaviour
 
     public AudioSource reloadSound;
     public AudioSource drawSound;
+    public AudioSource knifeSound;
 
     void Awake()
     {
@@ -168,7 +169,7 @@ public class GunAK : MonoBehaviour
 
     IEnumerator KnifeAttack()
     {
-
+        knifeSound.Play();
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
         isMelee = true;

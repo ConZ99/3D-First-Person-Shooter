@@ -36,6 +36,7 @@ public class GunPistol : MonoBehaviour
 
     public AudioSource reloadSound;
     public AudioSource drawSound;
+    public AudioSource knifeSound;
 
     void Awake()
     {
@@ -166,6 +167,7 @@ public class GunPistol : MonoBehaviour
 
     IEnumerator KnifeAttack()
     {
+        knifeSound.Play();
         animator.SetBool("Melee", true);
         tacticalKnife.SetActive(true);
         isMelee = true;
