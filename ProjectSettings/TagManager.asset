@@ -10,6 +10,8 @@ TagManager:
   - Quest
   - Door
   - Story
+  - StoryQuest
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

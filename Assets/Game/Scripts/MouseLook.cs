@@ -48,12 +48,17 @@ public class MouseLook : MonoBehaviour
                 Interactable inter = hit.collider.GetComponent<Interactable>();
                 if(inter != null)
                 {
-                    if(inter.transform.gameObject.tag == "Quest")
+                    if (inter.transform.gameObject.tag == "StoryQuest")
+                    {
+                        inter.story = true;
+                    }
+                    else if(inter.transform.gameObject.tag == "Quest")
                     {
                         SetFocus(inter);
                         inter.follow = true;
                         inter.story = true;
                         GameObject door = GameObject.Find("Door");
+                        inter.transform.gameObject.tag = "StoryQuest";
                         //fa cumva ca sa dai enable la iconita o data ce ai completat questul local.                        
                     }
                     else if(inter.transform.gameObject.tag == "Door")
@@ -66,8 +71,9 @@ public class MouseLook : MonoBehaviour
                             SetFocus(inter);
                             inter.InteractDoor();
                         }
+                        inter.transform.gameObject.tag = "Untagged";
                     }
-                    inter.transform.gameObject.tag = "Untagged";
+                    
                 }
             }
         }

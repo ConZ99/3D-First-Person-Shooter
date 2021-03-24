@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
+    public static bool inStory = false;
     public GameObject pauseMenu;
 
     public GameObject resumeButton;
@@ -21,12 +22,15 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(!inStory)
         {
-            if (isPaused == false)
-                Pause();
-            else
-                Resume();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isPaused == false)
+                    Pause();
+                else
+                    Resume();
+            }
         }
     }
 

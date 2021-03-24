@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Interactable : MonoBehaviour
 {
@@ -74,11 +75,15 @@ public class Interactable : MonoBehaviour
         if (story)
         {
             StoryShow();
-            if (isPaused == false)
+            if (isPaused == false){
+                PauseMenu.inStory = true;
                 pause();
+            }
             else
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KeyCode.Return)){
+                    PauseMenu.inStory = false;
                     resume();
+                }
         }
     }
 
@@ -87,6 +92,29 @@ public class Interactable : MonoBehaviour
         if (qtItems.Length != 0){
             
             storyText.SetActive(true);
+            TextMeshProUGUI mText = storyText.GetComponent<TextMeshProUGUI>();
+            int level = SceneManager.GetActiveScene().buildIndex;
+            switch (level)
+            {
+                case 0:
+                    mText.text = "Level 0";
+                    break;
+                case 1:
+                    mText.text = "Level 1";
+                    break;
+                case 2:
+                    mText.text = "Level 2";
+                    break;
+                case 3:
+                    mText.text = "Level 3";
+                    break;
+                case 4:
+                    mText.text = "Level 4";
+                    break;
+                default:
+                    mText.text = "Level 5";
+                    break;
+            }
         }        
     }
 
