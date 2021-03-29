@@ -50542,7 +50542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8930340424690832446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51169,7 +51169,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046813949603686314}
-  - component: {fileID: 2741082127215152210}
   m_Layer: 0
   m_Name: Quest Menu
   m_TagString: Untagged
@@ -51197,19 +51196,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2741082127215152210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8885101203207820211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6030cd5ff24ed046bd43ccedd1d44d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questMenu: {fileID: 5357179753003341836}
 --- !u!1 &8897567410390630290
 GameObject:
   m_ObjectHideFlags: 0
