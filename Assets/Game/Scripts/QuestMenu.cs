@@ -7,6 +7,7 @@ public class QuestMenu : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject questMenu;
+    //public TextMeshProUGUI storyText;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class QuestMenu : MonoBehaviour
 
     void Update()
     {
+        //switch case pt nivele
         if (Input.GetKeyDown("k"))
         {
             if (isPaused == false)

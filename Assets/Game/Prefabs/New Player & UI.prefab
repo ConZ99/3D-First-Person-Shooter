@@ -22615,6 +22615,8 @@ MonoBehaviour:
   recoilAmount: 0.01
   fireRate: 1
   reloadSound: {fileID: 0}
+  drawSound: {fileID: 0}
+  knifeSound: {fileID: 0}
 --- !u!82 &533654651790817558
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38534,6 +38536,7 @@ MonoBehaviour:
   fireRate: 7
   reloadSound: {fileID: 0}
   drawSound: {fileID: 0}
+  knifeSound: {fileID: 0}
 --- !u!82 &4574221633766140828
 AudioSource:
   m_ObjectHideFlags: 0
@@ -44739,6 +44742,7 @@ MonoBehaviour:
   fireRate: 5
   reloadSound: {fileID: 0}
   drawSound: {fileID: 0}
+  knifeSound: {fileID: 0}
 --- !u!82 &4574221634550933722
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50381,7 +50385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3369779788464566355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50971,6 +50975,9 @@ MonoBehaviour:
   recoilAmount: 0
   fireRate: 0.5
   reloadSound: {fileID: 0}
+  drawSound: {fileID: 0}
+  knifeSound: {fileID: 0}
+  scopeSound: {fileID: 0}
   isAiming: 0
   scope: {fileID: 532419035000438308}
   weaponCamera: {fileID: 532419036249001717}

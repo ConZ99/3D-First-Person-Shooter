@@ -30,7 +30,7 @@ public class Interactable : MonoBehaviour
         qtItems = GameObject.FindGameObjectsWithTag("Story");
         if (qtItems.Length == 1){
             storyText = qtItems[0];
-            storyText.SetActive(false);
+            //storyText.SetActive(false);
         }
         Debug.Log(qtItems.Length);
     }
@@ -52,7 +52,8 @@ public class Interactable : MonoBehaviour
             else if (distance > 3f)
                 MoveToTarget(target);
         }
-
+        if (!isPaused)
+            storyText.SetActive(false);
         StoryCheck();
     }
 
@@ -67,7 +68,7 @@ public class Interactable : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         story = false;
-        storyText.SetActive(false);
+        //storyText.SetActive(false);
     }
 
     void StoryCheck()
@@ -148,7 +149,7 @@ public class Interactable : MonoBehaviour
 
     public void InteractDoor()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("merge!!!");
     }
 }
