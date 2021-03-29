@@ -15,7 +15,7 @@ public class Map : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         if (Input.GetKeyDown(KeyCode.M))

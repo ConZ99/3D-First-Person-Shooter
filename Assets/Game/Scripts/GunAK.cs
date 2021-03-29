@@ -60,7 +60,7 @@ public class GunAK : MonoBehaviour
 
     void Update()
     {
-        if ((PauseMenu.isPaused) || isDrawing)
+        if ((PauseMenu.isPaused) || isDrawing || PauseMenu.inStory)
             return;
 
         UI.DisplayAmmo(currentAmmo, totalAmmo);
@@ -99,7 +99,7 @@ public class GunAK : MonoBehaviour
             Shoot();
             return;
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(KnifeAttack());
             return;
@@ -124,6 +124,7 @@ public class GunAK : MonoBehaviour
         {
             Transform root_obj = hit_obj.transform.root;
             Target target = (root_obj).transform.GetComponent<Target>();
+            
             if (target != null)
                 target.TakeDamage(damage);
 

@@ -86,7 +86,7 @@ public class GunSniper : MonoBehaviour
 
     void Update()
     {
-        if ((PauseMenu.isPaused) || isDrawing)
+        if ((PauseMenu.isPaused) || isDrawing || PauseMenu.inStory)
             return;
 
         CheckScope();
@@ -145,7 +145,7 @@ public class GunSniper : MonoBehaviour
             Shoot();
             return;
         }
-        else if (Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(KnifeAttack());
             return;
@@ -186,6 +186,11 @@ public class GunSniper : MonoBehaviour
                 Quaternion holeRortation = Quaternion.FromToRotation(Vector3.up, hit_obj.normal);
                 Instantiate(bulletHole, holePosition, holeRortation);
 
+                GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
+                Destroy(impactObj, 2f);
+            }
+            else if (root_obj.CompareTag("Enemy"))
+            {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }

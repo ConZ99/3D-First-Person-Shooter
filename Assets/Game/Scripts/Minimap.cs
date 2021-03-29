@@ -9,7 +9,7 @@ public class Minimap : MonoBehaviour
 
     void LateUpdate()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         Vector3 newPosition = player.position;

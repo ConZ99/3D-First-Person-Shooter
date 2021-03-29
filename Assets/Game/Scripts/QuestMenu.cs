@@ -19,6 +19,9 @@ public class QuestMenu : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.isPaused || PauseMenu.inStory)
+            return;
+
         int level = SceneManager.GetActiveScene().buildIndex;
         switch (level)
         {

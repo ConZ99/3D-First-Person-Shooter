@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
         {
             walkingSound.Stop();
             runningSound.Stop();

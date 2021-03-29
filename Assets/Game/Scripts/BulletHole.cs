@@ -14,7 +14,7 @@ public class BulletHole : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         timer -= Time.deltaTime;

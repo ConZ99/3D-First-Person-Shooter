@@ -15,7 +15,7 @@ public class AIMovement : MonoBehaviour
 
     public void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
         {
             walkingSound.Stop();
             return;

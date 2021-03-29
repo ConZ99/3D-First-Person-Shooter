@@ -22,7 +22,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused == true)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;

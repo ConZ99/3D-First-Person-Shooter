@@ -18,7 +18,7 @@ public class AIWeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         CheckWeapons();

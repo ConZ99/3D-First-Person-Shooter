@@ -22,7 +22,7 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused == true)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         if (sniperScript.isAiming == true)

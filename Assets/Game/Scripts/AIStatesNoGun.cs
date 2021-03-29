@@ -33,7 +33,7 @@ public class AIStatesNoGun : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if (PauseMenu.isPaused || PauseMenu.inStory)
             return;
 
         UpdateState();

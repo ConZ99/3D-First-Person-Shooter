@@ -60,7 +60,7 @@ public class GunPistol : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.isPaused)
+        if ((PauseMenu.isPaused) || isDrawing || PauseMenu.inStory)
             return;
 
         UI.DisplayAmmo(currentAmmo, totalAmmo);
@@ -97,7 +97,7 @@ public class GunPistol : MonoBehaviour
             Shoot();
             return;
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             StartCoroutine(KnifeAttack());
             return;
