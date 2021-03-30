@@ -25,19 +25,19 @@ public class QuestMenu : MonoBehaviour
         int level = SceneManager.GetActiveScene().buildIndex;
         switch (level)
         {
-            case 0:
+            case 1:
                 mText.text = "What is going on?\nI have to talk to the priest near the church.\nHe might know what is happening";
                 break;
-            case 1:
+            case 2:
                 mText.text = "So the van is broken down..\nI have to find the mechanic and ask him for help.\nIf we dont get out soon then we'll all lose our lives.";
                 break;
-            case 2:
-                mText.text = "The note from the mechanic said to find him at his summer house near the lake.\nThank god I found a working car, although very little gas so I only go so far.";
-                break;
             case 3:
-                mText.text = "I should be able to find Jacob's tools I need here.\nI have to be careful though, I hear strange noises up ahead.\nI have to find a doctor soon too, the wound didn't look so good.";
+                mText.text = "The note from the mechanic said to find him at his summer house near the lake.\nThank god I found a working car, although it had very little gas so I only got so far.";
                 break;
             case 4:
+                mText.text = "I should be able to find Jacob's tools I need here.\nI have to be careful though, I hear strange noises up ahead.\nI have to find a doctor soon too, the wound didn't look so good.";
+                break;
+            case 5:
                 mText.text = "I should be able to find someone near the hospital in the distance.\nOr at least some drugs to help Jacob a little.";
                 break;
             default:

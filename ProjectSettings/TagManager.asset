@@ -12,6 +12,7 @@ TagManager:
   - Story
   - StoryQuest
   - PauseMenu
+  - Tools
   layers:
   - Default
   - TransparentFX
