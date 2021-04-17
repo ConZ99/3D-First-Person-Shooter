@@ -77,6 +77,12 @@ public class Interactable : MonoBehaviour
                 tools = Tools[0];
             }
             tools.SetActive(false);
+        } else {
+            Tools = GameObject.FindGameObjectsWithTag("Tools");
+            if (Tools.Length == 1){
+                tools = Tools[0];
+            }
+            tools.tag = "Untagged";
         }
     }
 

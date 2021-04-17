@@ -20,6 +20,7 @@ public class Map : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
+            Debug.Log("mapa");
             isActive = !isActive;
             mapUI.SetActive(isActive);
         }
