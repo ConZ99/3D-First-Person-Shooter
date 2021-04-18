@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogStart: 20
+  m_LinearFogEnd: 200
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -2850,6 +2850,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6685198694387558141, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2920,6 +2925,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 367158643}
+    - target: {fileID: 6685198694388054738, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6685198694388054749, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: m_Name
@@ -3518,6 +3528,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4453824556887274023, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 152.7002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824556887274023, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100.69995
+      objectReference: {fileID: 0}
     - target: {fileID: 4453824557251093985, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3537,6 +3557,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824557401550791, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -82.700195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824557401550791, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 181.6001
       objectReference: {fileID: 0}
     - target: {fileID: 4453824557426274986, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
@@ -5726,6 +5756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 914677324927821053, guid: 49ef543cbe52e11439d8c32741f4841c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.49
       objectReference: {fileID: 0}
     - target: {fileID: 914677325422075877, guid: 49ef543cbe52e11439d8c32741f4841c,
         type: 3}

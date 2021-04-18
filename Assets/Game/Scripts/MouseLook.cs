@@ -71,7 +71,7 @@ public class MouseLook : MonoBehaviour
                     {
                         Debug.Log("door");
                         qtItems = GameObject.FindGameObjectsWithTag("Quest");
-                        totalQtItemsNumber = qtItems.Length;
+                        totalQtItemsNumber = qtItems.Length + GameObject.FindGameObjectsWithTag("Tools").Length;
                         if (totalQtItemsNumber == 0)
                         {
                             Debug.Log("inter door");
