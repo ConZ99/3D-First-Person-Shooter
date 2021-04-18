@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 348263152612983154}
   m_Layer: 0
   m_Name: Enemy Zombie 1 (5)
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1753,8 +1753,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11
-  m_Center: {x: -0.05, y: 0.04, z: 0}
+  m_Radius: 0.115145415
+  m_Center: {x: -0.04485458, y: 0.039999995, z: 6.922636e-10}
 --- !u!1 &3806980672147909546
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,8 +2599,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30387667, y: 0.2768307, z: 0.35512733}
-  m_Center: {x: -0.15193845, y: -0.024180755, z: -0.00000086426735}
+  m_Size: {x: 0.37032366, y: 0.2768307, z: 0.35512733}
+  m_Center: {x: -0.18516208, y: -0.02418055, z: -0.00000086071265}
 --- !u!1 &5858233609486431135
 GameObject:
   m_ObjectHideFlags: 0

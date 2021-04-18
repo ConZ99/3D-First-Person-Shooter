@@ -5605,7 +5605,7 @@ GameObject:
   - component: {fileID: 6400308927854403773}
   m_Layer: 0
   m_Name: Sci-Fi_Soldier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11454,7 +11454,7 @@ GameObject:
   - component: {fileID: 6400308927343749670}
   m_Layer: 0
   m_Name: Enemy Robot 1
-  m_TagString: Enemy
+  m_TagString: Robot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11547,6 +11547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunObj: {fileID: 6400308927038672860}
   player: {fileID: 0}
+  target: {fileID: 0}
   movement: {fileID: 6400308928616370909}
   animator: {fileID: 6400308927854403773}
   maxLookDist: 20
@@ -11554,6 +11555,7 @@ MonoBehaviour:
   maxMeleeDist: 2
   fireRate: 1
   meleeRate: 1
+  memoryTime: 5
   meleeSound: {fileID: 6400308927343749670}
   currentState: 0
   lastState: 0

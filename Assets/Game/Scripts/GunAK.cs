@@ -137,7 +137,7 @@ public class GunAK : MonoBehaviour
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }
-            else if (root_obj.CompareTag("Enemy"))
+            else if (target.CompareTag("Zombie") || target.CompareTag("Robot"))
             {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);

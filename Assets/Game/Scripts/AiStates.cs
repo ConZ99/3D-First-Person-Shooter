@@ -6,7 +6,7 @@ public class AiStates : MonoBehaviour
 {
     public GameObject gunObj;
     public GameObject player;
-    private GameObject target = null;
+    public GameObject target = null;
     public AIMovement movement;
     public Animator animator;
 
@@ -21,6 +21,9 @@ public class AiStates : MonoBehaviour
     public float meleeRate = 1f;
     private float nextTimeToMelee = 0f;
     private bool isMelee = false;
+
+    public float memoryTime = 5f;
+    private float lastCheckTime = 0f;
 
     public AudioSource meleeSound;
 
@@ -125,34 +128,42 @@ public class AiStates : MonoBehaviour
         animator.SetBool("Melee", false);
         meleeSound.Stop();
     }
-
     void UpdateState()
     {
+        lastCheckTime += Time.deltaTime;
+
         lastState = currentState;
-        if (Vector3.Distance(player.transform.position, transform.position) <= maxLookDist)
-            target = player;
-        else
-            target = null;
+        if (lastCheckTime > memoryTime || target == null)
+        {
+            if (Vector3.Distance(player.transform.position, transform.position) <= maxLookDist)
+                target = player;
+            else
+                target = null;
+            lastCheckTime = 0f;
+        }
 
         if (target == null)
         {
             currentState = State.Patrol;
-            gunObj.SetActive(true);
-        }
-        else if (gunObj.GetComponent<AIGun>().totalAmmo <= 0 && gunObj.GetComponent<AIGun>().currentAmmo <= 0)
-        {
-            currentState = State.AttackMelee;
-            gunObj.SetActive(false);
-        }
-        else if (Vector3.Distance(target.transform.position, transform.position) <= maxMeleeDist)
-        {
-            currentState = State.AttackMelee;
-            gunObj.SetActive(false);
         }
         else
         {
-            currentState = State.AttackGun;
-            gunObj.SetActive(true);
+            AlarmAllies();
+            currentState = State.AttackMelee;
         }
+    }
+    void AlarmAllies()
+    {
+
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Zombie");
+        for (int i = 0; i < allies.Length; i++)
+        {
+            if (Vector3.Distance(gameObject.transform.position, allies[i].transform.position) < 50f)
+            {
+                AiStates s = allies[i].GetComponent<AiStates>();
+                s.target = target;
+            }
+        }
+
     }
 }
