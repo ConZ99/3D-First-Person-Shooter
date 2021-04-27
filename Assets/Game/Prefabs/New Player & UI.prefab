@@ -33,8 +33,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2885629433891798380}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 894.37994, y: -553.4632, z: -1872.7255}
+  m_LocalRotation: {x: -0, y: 0.101349354, z: -0, w: -0.99485093}
+  m_LocalPosition: {x: 1097.58, y: -549.65, z: -1668.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4453824556985913840}
@@ -43,7 +43,7 @@ Transform:
   - {fileID: 4453824556298744559}
   m_Father: {fileID: 4453824556248272224}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -371.634, z: 0}
 --- !u!33 &2885629433891798386
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98,12 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 2885629433891798388}
   animator: {fileID: 4453824557310355854}
-  walkingSpeed: 5
-  runningSpeed: 10
-  runBuildUp: 5
+  walkingSpeed: 3
+  runningSpeed: 4
+  runBuildUp: 4
   runKey: 304
   gravity: -20
-  jumpHeight: 5
+  jumpHeight: 2
   groundCheck: {fileID: 4453824555956372746}
   groundDistance: 0.4
   groundMask:
@@ -25171,7 +25171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4453824556441575283}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -114.39554, y: 95.35691, z: -81.48236}
+  m_LocalPosition: {x: 92.1, y: 85.7, z: 123.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4453824557125235752}
@@ -25204,11 +25204,11 @@ Camera:
   far clip plane: 150
   field of view: 60
   orthographic: 1
-  orthographic size: 140
+  orthographic size: 35.187393
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 800
+    m_Bits: 801
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: d833a901fb2255145ad3892c8d926cb3, type: 2}
   m_TargetDisplay: 0

@@ -20,6 +20,8 @@ public class Interactable : MonoBehaviour
     private GameObject[] Tools;
     GameObject tools;
 
+    public SaveSystem saveScript;
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -34,7 +36,6 @@ public class Interactable : MonoBehaviour
             storyText = qtItems[0];
             //storyText.SetActive(false);
         }
-        Debug.Log(qtItems.Length);
     }
 
     void Update()
@@ -164,10 +165,16 @@ public class Interactable : MonoBehaviour
 
     public void InteractDoor()
     {
-        Debug.Log("merge!!!");
         if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
             SceneManager.LoadScene(0);
+            Cursor.lockState = CursorLockMode.None;
+            saveScript.Delete();
+        }
         else
+        {
+            saveScript.Save();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

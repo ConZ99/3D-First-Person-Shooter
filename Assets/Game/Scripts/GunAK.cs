@@ -18,7 +18,7 @@ public class GunAK : MonoBehaviour
     private bool isReloading = false;
     public int cartidgeCapacity = 30;
     public int totalAmmo = 60;
-    private int currentAmmo = 30;
+    public int currentAmmo = 30;
 
     public ParticleSystem gunFlash;
     public AudioSource fireSound;
@@ -137,7 +137,7 @@ public class GunAK : MonoBehaviour
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }
-            else if (target.CompareTag("Zombie") || target.CompareTag("Robot"))
+            else if (target != null && (target.CompareTag("Zombie") || target.CompareTag("Robot")))
             {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);

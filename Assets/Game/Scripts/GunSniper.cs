@@ -18,7 +18,7 @@ public class GunSniper : MonoBehaviour
     private bool isReloading = false;
     public int cartidgeCapacity = 10;
     public int totalAmmo = 30;
-    private int currentAmmo = 10;
+    public int currentAmmo = 10;
 
     public ParticleSystem gunFlash;
     public AudioSource fireSound;
@@ -189,7 +189,7 @@ public class GunSniper : MonoBehaviour
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }
-            else if (target.CompareTag("Zombie") || target.CompareTag("Robot"))
+            else if (target != null && (target.CompareTag("Zombie") || target.CompareTag("Robot")))
             {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);

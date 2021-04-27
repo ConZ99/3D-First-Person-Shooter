@@ -18,7 +18,7 @@ public class GunShotgun : MonoBehaviour
     private bool isReloading = false;
     public int cartidgeCapacity = 6;
     public int totalAmmo = 32;
-    private int currentAmmo = 6;
+    public int currentAmmo = 6;
 
     public ParticleSystem gunFlash;
     public AudioSource fireSound;
@@ -145,7 +145,7 @@ public class GunShotgun : MonoBehaviour
                     GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                     Destroy(impactObj, 2f);
                 }
-                else if (target.CompareTag("Zombie") || target.CompareTag("Robot"))
+                else if (target != null && (target.CompareTag("Zombie") || target.CompareTag("Robot")))
                 {
                     GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                     Destroy(impactObj, 2f);

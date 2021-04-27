@@ -245,7 +245,7 @@ MonoBehaviour:
   ragDoll: {fileID: 2219474720985984566, guid: 39dc21758f20ba94997a969c7541a404, type: 3}
   ammo: {fileID: 5856895913873259509, guid: 6751f219c6d487c4d91cacc9c8ee9393, type: 3}
   health: 100
-  armor: 100
+  armor: 0
 --- !u!114 &348263152612983166
 MonoBehaviour:
   m_ObjectHideFlags: 0

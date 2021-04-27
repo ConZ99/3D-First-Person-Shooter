@@ -45,9 +45,9 @@ public class GameSystem : MonoBehaviour
         if (playerStats.health <= 0)
         {
             playerUI.DisplayHealth();
-            //pauseMenu.GameLost();
+            pauseMenu.GameLost();
         }
-        else
+        /*else
         {
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
             enemiesNumber = enemies.Length;
@@ -56,6 +56,6 @@ public class GameSystem : MonoBehaviour
             qtItemsNumber = qtItems.Length;
             //if (qtItemsNumber == 0)
                 //pauseMenu.GameWin();
-        }
+        }*/
     }
 }
