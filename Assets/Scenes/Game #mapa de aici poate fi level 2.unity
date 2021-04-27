@@ -278,6 +278,18 @@ Transform:
   m_Father: {fileID: 515013566}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &70149598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2714739397785698554, guid: 2b69616c0c8fee34ebc66aad6ecf005e,
+    type: 3}
+  m_PrefabInstance: {fileID: 254387467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa77f30a85267774ebb7f7189e988615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &85563939
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,7 +5981,7 @@ MonoBehaviour:
   currentWaypoint: {fileID: 0}
   walkingSound: {fileID: 0}
   story: 0
-  saveScript: {fileID: 0}
+  saveScript: {fileID: 70149598}
 --- !u!4 &8253309287172732556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 914677324769250162, guid: 49ef543cbe52e11439d8c32741f4841c,

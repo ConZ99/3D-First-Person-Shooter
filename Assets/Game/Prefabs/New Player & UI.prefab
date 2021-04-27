@@ -99,8 +99,8 @@ MonoBehaviour:
   controller: {fileID: 2885629433891798388}
   animator: {fileID: 4453824557310355854}
   walkingSpeed: 3
-  runningSpeed: 4
-  runBuildUp: 4
+  runningSpeed: 5
+  runBuildUp: 5
   runKey: 304
   gravity: -20
   jumpHeight: 2
@@ -17174,6 +17174,7 @@ MonoBehaviour:
   reloadTime: 4
   cartidgeCapacity: 6
   totalAmmo: 32
+  currentAmmo: 6
   gunFlash: {fileID: 4453824556904703569}
   fireSound: {fileID: 4453824555969164030}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -43656,6 +43657,7 @@ MonoBehaviour:
   reloadTime: 3
   cartidgeCapacity: 30
   totalAmmo: 60
+  currentAmmo: 30
   gunFlash: {fileID: 4453824555948997217}
   fireSound: {fileID: 4453824557216898116}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -45191,6 +45193,7 @@ MonoBehaviour:
   reloadTime: 3
   cartidgeCapacity: 10
   totalAmmo: 30
+  currentAmmo: 10
   gunFlash: {fileID: 4453824555747212830}
   fireSound: {fileID: 4453824557428499837}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -51667,6 +51670,7 @@ MonoBehaviour:
   reloadTime: 2
   cartidgeCapacity: 7
   totalAmmo: 21
+  currentAmmo: 7
   gunFlash: {fileID: 4453824557473794452}
   fireSound: {fileID: 4453824557602072487}
   impactEffect: {fileID: 100002, guid: f75efcef4bb42054abf94f8e5c701adc, type: 3}
