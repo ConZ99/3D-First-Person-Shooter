@@ -9,6 +9,7 @@ public class AiStates : MonoBehaviour
     public GameObject target = null;
     public AIMovement movement;
     public Animator animator;
+    private AIGun gunScript;
 
     public float maxLookDist = 20f;
     public float maxAttackDist = 10f;
@@ -39,6 +40,7 @@ public class AiStates : MonoBehaviour
     private void Start()
     {
         currentState = State.Patrol;
+        gunScript = gunObj.GetComponent<AIGun>();
     }
 
     void Update()
@@ -135,7 +137,8 @@ public class AiStates : MonoBehaviour
         lastState = currentState;
         if (lastCheckTime > memoryTime || target == null)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) <= maxLookDist)
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            if (dist <= maxLookDist)
                 target = player;
             else
                 target = null;
@@ -149,7 +152,13 @@ public class AiStates : MonoBehaviour
         else
         {
             AlarmAllies();
-            currentState = State.AttackMelee;
+
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            
+            if (dist < maxMeleeDist || (gunScript.totalAmmo == 0 && gunScript.currentAmmo == 0))
+                currentState = State.AttackMelee;
+            else
+                currentState = State.AttackGun;
         }
     }
     void AlarmAllies()
