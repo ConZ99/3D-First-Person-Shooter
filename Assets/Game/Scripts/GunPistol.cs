@@ -124,7 +124,7 @@ public class GunPistol : MonoBehaviour
             Target target = (root_obj).transform.GetComponent<Target>();
             if (target != null)
                 target.TakeDamage(damage);
-            Debug.Log(root_obj);
+
             if (hit_obj.transform.CompareTag("Environment"))
             {
                 Vector3 holePosition = hit_obj.point + 0.011f * hit_obj.normal;
@@ -136,7 +136,6 @@ public class GunPistol : MonoBehaviour
             }
             else if (target != null && (target.CompareTag("Zombie") || target.CompareTag("Robot")))
             {
-                
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }

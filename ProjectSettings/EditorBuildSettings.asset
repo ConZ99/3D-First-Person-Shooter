@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Home_Base.unity
     guid: 37a24313a0652e1419593ac7d137bd41
   - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 3f280f6f0e22ff844842e7188c318189
+  - enabled: 0
     path: Assets/Scenes/Game #mapa de aici poate fi level 2.unity
     guid: 079647b442a3de04bbfeee384dd69ead
   - enabled: 1
