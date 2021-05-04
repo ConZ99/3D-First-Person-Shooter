@@ -204,8 +204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5104249882449423995}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -13.2, z: -0}
-  m_LocalScale: {x: 11, y: 11, z: 22}
+  m_LocalPosition: {x: 0, y: -33.87, z: -0}
+  m_LocalScale: {x: 27.991606, y: 27.991606, z: 55.98321}
   m_Children: []
   m_Father: {fileID: 6685198694387558141}
   m_RootOrder: 1
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 6685198694385787933}
   - component: {fileID: 6685198694388054738}
   m_Layer: 0
-  m_Name: Drone 1
+  m_Name: Drone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
