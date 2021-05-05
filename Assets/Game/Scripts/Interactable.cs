@@ -170,6 +170,7 @@ public class Interactable : MonoBehaviour
         {
             SceneManager.LoadScene(0);
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             saveScript.Delete();
         }
         else

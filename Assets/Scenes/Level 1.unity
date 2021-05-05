@@ -319,6 +319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1001 &76745054
@@ -562,6 +567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -1256,6 +1266,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1001 &540589722
@@ -1380,6 +1395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -1849,6 +1869,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1 &755676323
@@ -2182,6 +2207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -2531,6 +2561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1001 &1123981937
@@ -2646,6 +2681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1001 &1134104902
@@ -2760,6 +2800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -2945,6 +2990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -3651,6 +3701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 13
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!1 &1740506849
@@ -3886,6 +3941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 14
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!4 &1798396567 stripped
@@ -4016,6 +4076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -4311,6 +4376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Robot 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
@@ -4646,6 +4716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Robot 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6400308928616370910, guid: 7cabe2f330a20004f9fdf514f5c31b3d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cabe2f330a20004f9fdf514f5c31b3d, type: 3}
 --- !u!114 &2047139417 stripped
@@ -4838,15 +4913,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 914677324422261411, guid: 49ef543cbe52e11439d8c32741f4841c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 914677324422261411, guid: 49ef543cbe52e11439d8c32741f4841c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 914677324422261411, guid: 49ef543cbe52e11439d8c32741f4841c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 914677324769250162, guid: 49ef543cbe52e11439d8c32741f4841c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100.22
+      value: -113.6
       objectReference: {fileID: 0}
     - target: {fileID: 914677324769250162, guid: 49ef543cbe52e11439d8c32741f4841c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 65.17
+      value: 119.6
       objectReference: {fileID: 0}
     - target: {fileID: 914677324769250162, guid: 49ef543cbe52e11439d8c32741f4841c,
         type: 3}
