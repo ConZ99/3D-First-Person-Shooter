@@ -33,14 +33,14 @@ public class WeaponSwitch : MonoBehaviour
         {
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
-                weaponNumber = weaponNumber - 1;
+                weaponNumber -= 1;
                 if (weaponNumber == -1)
                     weaponNumber = weapons.Length - 1;
                 
             }
             else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
             {
-                weaponNumber = weaponNumber + 1;
+                weaponNumber += 1;
                 if (weaponNumber == weapons.Length)
                     weaponNumber = 0;
             }

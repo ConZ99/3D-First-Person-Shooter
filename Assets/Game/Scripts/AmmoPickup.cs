@@ -6,6 +6,9 @@ public class AmmoPickup : MonoBehaviour
 {
     public GunPistol pistol;
     public GunAK rifle;
+    public GunShotgun shotgun;
+    public GunSniper sniper;
+    public Target statsScript;
 
     void OnTriggerEnter(Collider col)
     {
@@ -14,10 +17,11 @@ public class AmmoPickup : MonoBehaviour
             GameObject ammoObj = col.gameObject;
             AmmoObject ammo = ammoObj.GetComponent<AmmoObject>();
 
-            if (ammo.pistolAmmo > 0)
-                pistol.totalAmmo += ammo.pistolAmmo;
-            else
-                rifle.totalAmmo += ammo.rifleAmmo;
+            pistol.totalAmmo += ammo.pistolAmmo;
+            rifle.totalAmmo += ammo.rifleAmmo;
+            shotgun.totalAmmo += ammo.shotgunAmmo;
+            sniper.totalAmmo += ammo.sniperAmmo;
+            statsScript.armor += ammo.armor;
 
             Destroy(ammoObj);
         }

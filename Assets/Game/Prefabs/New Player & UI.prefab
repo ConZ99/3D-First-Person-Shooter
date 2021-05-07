@@ -153,6 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pistol: {fileID: 4453824557602072485}
   rifle: {fileID: 4453824557216898118}
+  shotgun: {fileID: 4453824555969164031}
+  sniper: {fileID: 4453824557428499834}
+  statsScript: {fileID: 2885629433891798379}
 --- !u!114 &2885629433891798379
 MonoBehaviour:
   m_ObjectHideFlags: 0
