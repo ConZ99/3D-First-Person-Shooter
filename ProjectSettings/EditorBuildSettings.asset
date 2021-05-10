@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: b82843960152e7b4cbd9103d51beb8fc
+  - enabled: 1
+    path: Assets/Scenes/Epilog.unity
+    guid: b5852bbeec5157f4baddb2c38a952623
   m_configObjects: {}

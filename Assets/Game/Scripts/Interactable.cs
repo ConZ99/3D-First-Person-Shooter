@@ -168,7 +168,8 @@ public class Interactable : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {
-            SceneManager.LoadScene(0);
+            //cand termini ultimul nivel te trimite la scena de epilog, scena 6
+            SceneManager.LoadScene(6);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             saveScript.Delete();
