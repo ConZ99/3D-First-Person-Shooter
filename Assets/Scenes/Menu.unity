@@ -1982,8 +1982,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000035500165, y: 20.469995}
-  m_SizeDelta: {x: 839.785, y: 256.61716}
+  m_AnchoredPosition: {x: 0.000028729, y: 18.51}
+  m_SizeDelta: {x: 869.2968, y: 351.25937}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &499750907
 MonoBehaviour:
@@ -2004,18 +2004,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Intr-o zi a rasarit soarele.
-
-    Si bai sa traiasca steaua ta norocoasa
-    ca au venit astia de la aur cu armele si i-au scos pe uratii aia de la psd, de
-    arata ca niste zombalai sa moara mama... si au inceput cu manele. Ca vai de mine
-    va luam orasu lmao, fiti atenti ce muie va luati.
-
-    Dar ce nu stiau ei e ca..
-    TU ESTI CAMPION DE DAT MUIE DIN 2004 DE LA CAMPIONATU DE MUISTI DE LA PREDEAL
-
-    Sa
-    vada acu fraierii ce e pula adevarata!'
+  m_text: "\tAnul 2136, dupa mai mult de un secol de pace globala, un cel de-al treilea
+    razboi mondial izbucneste, luand civilii pe nepregatite.\n\tConflictul escaladeaza
+    rapid si duce la folosirea armelor nucleare si biologice. Pentru cetatenii unui
+    mic oras din SUA cosmarul abia a inceput. Peste noapte au fost invadati de fortele
+    inamice, iar majoritatea populatiei au suferit mutatii grave. \n\tJohn Doe, un
+    fost angajat in cadrul FBI-ului se vede nevoit sa gaseasca o cale de scapare
+    pentru el si restul supravietuitorilor, aceasta sarcina putand fi indeplinita
+    doar de cineva cu experienta sa."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2043,8 +2039,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2060,7 +2056,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 382
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2084,12 +2080,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 499750907}
-    characterCount: 423
+    characterCount: 584
     spriteCount: 0
-    spaceCount: 87
-    wordCount: 88
+    spaceCount: 95
+    wordCount: 93
     linkCount: 0
-    lineCount: 8
+    lineCount: 9
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
