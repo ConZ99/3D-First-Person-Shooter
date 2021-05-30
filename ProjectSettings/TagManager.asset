@@ -15,6 +15,7 @@ TagManager:
   - Tools
   - Zombie
   - Robot
+  - Explosive
   layers:
   - Default
   - TransparentFX

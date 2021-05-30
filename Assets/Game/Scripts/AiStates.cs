@@ -164,7 +164,7 @@ public class AiStates : MonoBehaviour
     void AlarmAllies()
     {
 
-        GameObject[] allies = GameObject.FindGameObjectsWithTag("Zombie");
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Robot");
         for (int i = 0; i < allies.Length; i++)
         {
             if (Vector3.Distance(gameObject.transform.position, allies[i].transform.position) < 50f)

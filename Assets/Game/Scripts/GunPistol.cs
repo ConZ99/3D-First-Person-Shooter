@@ -139,6 +139,11 @@ public class GunPistol : MonoBehaviour
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
             }
+            else if (hit_obj.transform.CompareTag("Explosive"))
+            {
+                ExplosiveBarrel barrel = hit_obj.transform.GetComponent<ExplosiveBarrel>();
+                barrel.Explode();
+            }
         }
     }
 
