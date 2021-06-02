@@ -5,24 +5,23 @@ using UnityEngine;
 public class ExplosiveBarrel : MonoBehaviour
 {
     public float radius = 30f;
-    public float damage = 500f;
+    public float damage = 300f;
     public bool triggered = false;
 
-    void Start()
+    public AudioSource explosion_sound;
+    public GameObject explosion_obj;
+    
+    public IEnumerator Explode()
     {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void Explode()
-    {
+        explosion_sound.Play();
         triggered = true;
-        Collider[] hit_objs = Physics.OverlapSphere(transform.position, radius);
+        this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        this.gameObject.GetComponent<Collider>().enabled = false;
 
+        Object exp = Instantiate(explosion_obj, transform.position, transform.rotation);
+        Destroy(exp, 10f);
+
+        Collider[] hit_objs = Physics.OverlapSphere(transform.position, radius);
         foreach (var hit_obj in hit_objs)
         {
             Target target = hit_obj.transform.GetComponent<Target>();
@@ -34,21 +33,22 @@ public class ExplosiveBarrel : MonoBehaviour
 
             if (target != null)
             {
-                target.TakeDamage(damage);
+                float dist = Vector3.Distance(transform.position, target.transform.position);
+                target.TakeDamage(damage * (1 - dist / radius));
             }
-            else if (root_target != null) {
-                root_target.TakeDamage(damage);
+            else if (root_target != null)
+            {
+                float dist = Vector3.Distance(transform.position, root_target.transform.position);
+                root_target.TakeDamage(damage * (1 - dist / radius));
             }
             else if (barr != null && barr.transform.gameObject != transform.gameObject && barr.triggered != true)
             {
                 barr.triggered = true;
-                barr.Explode();
+                StartCoroutine(barr.Explode());
             }
-
-            //Transform root_obj = hit_obj.transform.root;
-            //Debug.Log(hit_obj.transform.gameObject);
         }
 
+        yield return new WaitForSeconds(4f);
         Destroy(this.gameObject);
     }
 }

@@ -142,7 +142,7 @@ public class GunPistol : MonoBehaviour
             else if (hit_obj.transform.CompareTag("Explosive"))
             {
                 ExplosiveBarrel barrel = hit_obj.transform.GetComponent<ExplosiveBarrel>();
-                barrel.Explode();
+                StartCoroutine(barrel.Explode());
             }
         }
     }
