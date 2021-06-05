@@ -34,12 +34,16 @@ public class Target : MonoBehaviour
     {
         if (armor < 0)
             armor = 0;
+        else if (armor > 100)
+            armor = 100;
+
         if (health <= 0)
         {
             health = 0;
             Die();
         }
-
+        else if (health > 100)
+            health = 100;
     }
 
     public void TakeDamage(float damage)
