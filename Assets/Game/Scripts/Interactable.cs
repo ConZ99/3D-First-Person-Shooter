@@ -21,11 +21,17 @@ public class Interactable : MonoBehaviour
     GameObject tools;
 
     public SaveSystem saveScript;
+    public GameObject weaponCamera;
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    private void Awake()
+    {
+        weaponCamera = GameObject.FindGameObjectWithTag("MainCamera").transform.GetChild(0).gameObject;
     }
 
     void Start()
@@ -64,7 +70,8 @@ public class Interactable : MonoBehaviour
     {
         Time.timeScale = 0f;
         isPaused = true;
-    }
+        weaponCamera.SetActive(false);
+}
 
     void resume()
     {
@@ -86,6 +93,7 @@ public class Interactable : MonoBehaviour
             }
             
         }
+        weaponCamera.SetActive(true);
     }
 
     void StoryCheck()
