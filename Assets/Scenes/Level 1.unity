@@ -333,6 +333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2101325111}
     m_Modifications:
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5104249882449423993, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: rate
@@ -423,6 +428,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2838955f8df2d6459cf26e765bbedae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b2c292d1ffeab41841fef3c766359d, type: 3}
 --- !u!1 &138036987
@@ -821,6 +836,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2101325111}
     m_Modifications:
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5104249882449423993, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: rate
@@ -921,6 +941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2838955f8df2d6459cf26e765bbedae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b2c292d1ffeab41841fef3c766359d, type: 3}
 --- !u!1 &294043545
@@ -1496,6 +1521,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2101325111}
     m_Modifications:
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5104249882449423993, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: rate
@@ -1586,6 +1621,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2838955f8df2d6459cf26e765bbedae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b2c292d1ffeab41841fef3c766359d, type: 3}
 --- !u!4 &652550528 stripped
@@ -4554,6 +4609,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2101325111}
     m_Modifications:
+    - target: {fileID: 3516619911510813298, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5104249882449423993, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
       propertyPath: rate
@@ -4563,6 +4623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damage
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685198694385787933, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6685198694387558141, guid: 08b2c292d1ffeab41841fef3c766359d,
         type: 3}
@@ -4643,6 +4708,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drone 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f2838955f8df2d6459cf26e765bbedae, type: 2}
+    - target: {fileID: 6761323926302068654, guid: 08b2c292d1ffeab41841fef3c766359d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08b2c292d1ffeab41841fef3c766359d, type: 3}
