@@ -124,7 +124,6 @@ public class GunAK : MonoBehaviour
         {
             Transform root_obj = hit_obj.transform.root;
             Target target = (root_obj).transform.GetComponent<Target>();
-            
             if (target != null)
                 target.TakeDamage(damage);
 
@@ -141,6 +140,11 @@ public class GunAK : MonoBehaviour
             {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
+            }
+            else if (hit_obj.transform.CompareTag("Explosive"))
+            {
+                ExplosiveBarrel barrel = hit_obj.transform.GetComponent<ExplosiveBarrel>();
+                StartCoroutine(barrel.Explode());
             }
         }
     }

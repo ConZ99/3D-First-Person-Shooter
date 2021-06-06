@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 10
-  damage: 300
+  damage: 100
   triggered: 0
   explosion_sound: {fileID: 8256583303125871553}
   explosion_obj: {fileID: 100010, guid: e0609132424a24844b1d53ad3d704fd9, type: 3}

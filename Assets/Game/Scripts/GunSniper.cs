@@ -180,7 +180,7 @@ public class GunSniper : MonoBehaviour
             if (target != null)
                 target.TakeDamage(damage);
 
-            if (hit_obj.transform.tag == "Environment")
+            if (hit_obj.transform.CompareTag("Environment"))
             {
                 Vector3 holePosition = hit_obj.point + 0.011f * hit_obj.normal;
                 Quaternion holeRortation = Quaternion.FromToRotation(Vector3.up, hit_obj.normal);
@@ -193,6 +193,11 @@ public class GunSniper : MonoBehaviour
             {
                 GameObject impactObj = Instantiate(impactEffect, hit_obj.point, Quaternion.LookRotation(hit_obj.normal));
                 Destroy(impactObj, 2f);
+            }
+            else if (hit_obj.transform.CompareTag("Explosive"))
+            {
+                ExplosiveBarrel barrel = hit_obj.transform.GetComponent<ExplosiveBarrel>();
+                StartCoroutine(barrel.Explode());
             }
         }
     }
