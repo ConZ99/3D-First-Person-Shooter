@@ -5,19 +5,19 @@ using UnityEngine;
 public class AreaEffect : MonoBehaviour
 {
     public float damage = 50f;
-    public float rate = 10f;
+    public float rate = 4f;
     private float nextTimeToHit = 0f;
 
     private void OnTriggerStay(Collider other)
     {
-        if (Time.time >= nextTimeToHit)
+        if (other.gameObject.CompareTag("Player"))
         {
-            nextTimeToHit = Time.time + (1f / rate);
-            Debug.Log(other.gameObject);
-            if (other.gameObject.CompareTag("Player"))
+            if (Time.time >= nextTimeToHit)
             {
-                other.gameObject.GetComponent<Target>().TakeDamage(50);
+                nextTimeToHit = Time.time + (1f / rate);
+                other.gameObject.GetComponent<Target>().TakeDamage(damage);
             }
         }
+            
     }
 }
