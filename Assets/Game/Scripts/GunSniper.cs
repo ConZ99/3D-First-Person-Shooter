@@ -50,6 +50,8 @@ public class GunSniper : MonoBehaviour
     public float maxFOV = 60f;
     public float minFOV = 15f;
 
+    public int isEnabled = 0;
+
     void Awake()
     {
         UI = player.transform.GetComponent<PlayerUI>();

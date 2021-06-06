@@ -8,15 +8,16 @@ public class WeaponSwitch : MonoBehaviour
     public GameObject[] weapons;
     public Image[] weaponsSign;
     public Image[] weaponsBkg;
-    private int weaponNumber = 0;
+    public int weaponNumber = 0;
 
     private Color tempColor;
 
     public GunSniper sniperScript;
 
+    public bool[] weaponEnabled;
+
     void Start()
     {
-        weaponNumber = 0;
         UpdateWeapon();
     }
 
@@ -31,18 +32,32 @@ public class WeaponSwitch : MonoBehaviour
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") != 0)
         {
-            if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+            if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
             {
                 weaponNumber -= 1;
                 if (weaponNumber == -1)
                     weaponNumber = weapons.Length - 1;
+
+                while (weaponEnabled[weaponNumber] != true)
+                {
+                    weaponNumber -= 1;
+                    if (weaponNumber == -1)
+                        weaponNumber = weapons.Length - 1;
+                }
                 
             }
-            else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+            else if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
                 weaponNumber += 1;
                 if (weaponNumber == weapons.Length)
                     weaponNumber = 0;
+
+                while (weaponEnabled[weaponNumber] != true)
+                {
+                    weaponNumber += 1;
+                    if (weaponNumber == weapons.Length)
+                        weaponNumber = 0;
+                }
             }
             
             UpdateWeapon();

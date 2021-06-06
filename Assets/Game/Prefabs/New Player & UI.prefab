@@ -304,6 +304,7 @@ MonoBehaviour:
   shotgun: {fileID: 4453824555969164031}
   sniper: {fileID: 4453824557428499834}
   statsScript: {fileID: 2885629433891798379}
+  switchScript: {fileID: 4453824556985913841}
 --- !u!114 &2885629433891798379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17324,8 +17325,8 @@ MonoBehaviour:
   knifeTime: 2
   reloadTime: 4
   cartidgeCapacity: 6
-  totalAmmo: 32
-  currentAmmo: 6
+  totalAmmo: 0
+  currentAmmo: 0
   gunFlash: {fileID: 4453824556904703569}
   fireSound: {fileID: 4453824555969164030}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -17337,6 +17338,7 @@ MonoBehaviour:
   reloadSound: {fileID: 4453824555969164026}
   drawSound: {fileID: 4453824555969164027}
   knifeSound: {fileID: 4453824555969164024}
+  isEnabled: 0
 --- !u!82 &4453824555969164030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43109,7 +43111,9 @@ MonoBehaviour:
   - {fileID: 4453824557566391792}
   - {fileID: 6732131784185878352}
   - {fileID: 64999068367063851}
+  weaponNumber: 0
   sniperScript: {fileID: 4453824557428499834}
+  weaponEnabled: 01010101
 --- !u!1 &4453824557001970384
 GameObject:
   m_ObjectHideFlags: 0
@@ -43811,8 +43815,8 @@ MonoBehaviour:
   knifeTime: 2
   reloadTime: 3
   cartidgeCapacity: 30
-  totalAmmo: 60
-  currentAmmo: 30
+  totalAmmo: 0
+  currentAmmo: 0
   gunFlash: {fileID: 4453824555948997217}
   fireSound: {fileID: 4453824557216898116}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -43824,6 +43828,7 @@ MonoBehaviour:
   reloadSound: {fileID: 4453824557216898114}
   drawSound: {fileID: 4453824557216898115}
   knifeSound: {fileID: 4453824557216898112}
+  isEnabled: 0
 --- !u!82 &4453824557216898116
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45347,8 +45352,8 @@ MonoBehaviour:
   knifeTime: 2
   reloadTime: 3
   cartidgeCapacity: 10
-  totalAmmo: 30
-  currentAmmo: 10
+  totalAmmo: 0
+  currentAmmo: 0
   gunFlash: {fileID: 4453824555747212830}
   fireSound: {fileID: 4453824557428499837}
   impactEffect: {fileID: 100002, guid: 3b1513bcb86426b4795879be6a128ed7, type: 3}
@@ -45367,6 +45372,7 @@ MonoBehaviour:
   mainCamera: {fileID: 4453824556985913852}
   maxFOV: 60
   minFOV: 15
+  isEnabled: 0
 --- !u!82 &4453824557428499837
 AudioSource:
   m_ObjectHideFlags: 0
@@ -51837,6 +51843,7 @@ MonoBehaviour:
   reloadSound: {fileID: 4453824557602072482}
   drawSound: {fileID: 4453824557602072483}
   knifeSound: {fileID: 4453824557602072480}
+  isEnabled: 1
 --- !u!82 &4453824557602072487
 AudioSource:
   m_ObjectHideFlags: 0

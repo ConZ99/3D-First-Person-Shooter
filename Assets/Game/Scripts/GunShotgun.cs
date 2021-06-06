@@ -38,6 +38,8 @@ public class GunShotgun : MonoBehaviour
     public AudioSource drawSound;
     public AudioSource knifeSound;
 
+    public int isEnabled = 0;
+
     void Awake()
     {
         UI = player.transform.GetComponent<PlayerUI>();

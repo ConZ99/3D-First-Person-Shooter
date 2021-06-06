@@ -739,6 +739,11 @@ PrefabInstance:
       propertyPath: sniper
       value: 
       objectReference: {fileID: 2137549263}
+    - target: {fileID: 2714739397785698554, guid: 2b69616c0c8fee34ebc66aad6ecf005e,
+        type: 3}
+      propertyPath: switchScript
+      value: 
+      objectReference: {fileID: 1344322770}
     - target: {fileID: 3387886342403988840, guid: 2b69616c0c8fee34ebc66aad6ecf005e,
         type: 3}
       propertyPath: m_Name
@@ -3396,6 +3401,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 100.69995
       objectReference: {fileID: 0}
+    - target: {fileID: 4453824556985913841, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: weaponEnabled.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824556985913841, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: weaponEnabled.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824556985913841, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: weaponEnabled.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4453824557251093985, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3439,6 +3459,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1344322768}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1344322770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4453824556985913841, guid: f2347cc07f6cd0347909a5ac832f6011,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344322768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f26771d4386154fa51a1949d8d6302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1344322773 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2885629433891798379, guid: f2347cc07f6cd0347909a5ac832f6011,
