@@ -20270,6 +20270,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -371.634
       objectReference: {fileID: 0}
+    - target: {fileID: 4453824555887687224, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4453824555887687238, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -20353,6 +20358,11 @@ PrefabInstance:
     - target: {fileID: 4453824556036044236, guid: f2347cc07f6cd0347909a5ac832f6011,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453824556181623727, guid: f2347cc07f6cd0347909a5ac832f6011,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453824556248272224, guid: f2347cc07f6cd0347909a5ac832f6011,
