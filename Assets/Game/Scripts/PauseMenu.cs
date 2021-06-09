@@ -61,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.SetActive(false);
         winText.SetActive(true);
         looseText.SetActive(false);
+
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -73,6 +74,7 @@ public class PauseMenu : MonoBehaviour
         resumeButton.SetActive(false);
         winText.SetActive(false);
         looseText.SetActive(true);
+
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -81,6 +83,8 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        PlayerPrefs.DeleteAll();
+
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene(0);
@@ -88,6 +92,8 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        PlayerPrefs.DeleteAll();
+
         Application.Quit();
     }
 }
