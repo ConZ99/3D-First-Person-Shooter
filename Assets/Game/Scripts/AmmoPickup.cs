@@ -12,47 +12,54 @@ public class AmmoPickup : MonoBehaviour
 
     public WeaponSwitch switchScript;
 
+    public DisplayInfo displayInf;
+
     void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Ammo"))
         {
             GameObject ammoObj = col.gameObject;
             AmmoObject ammo = ammoObj.GetComponent<AmmoObject>();
+            
+            if (ammo.pistolAmmo > 0)
+            {
+                pistol.totalAmmo += ammo.pistolAmmo;
+                displayInf.addMsg("Added " + ammo.pistolAmmo + " pistol ammo.");
 
-            Debug.Log(ammo.pistolAmmo + " " + ammo.rifleAmmo + " " + ammo.shotgunAmmo + " " + ammo.sniperAmmo + " " + ammo.armor);
+                pistol.isEnabled = 1;
+                switchScript.weaponEnabled[0] = true;
+            }
+            else if (ammo.rifleAmmo > 0)
+            {
+                rifle.totalAmmo += ammo.rifleAmmo;
+                displayInf.addMsg("Added " + ammo.rifleAmmo + " rifle ammo.");
 
-            pistol.totalAmmo += ammo.pistolAmmo;
-            rifle.totalAmmo += ammo.rifleAmmo;
-            shotgun.totalAmmo += ammo.shotgunAmmo;
-            sniper.totalAmmo += ammo.sniperAmmo;
-            statsScript.armor += ammo.armor;
+                rifle.isEnabled = 1;
+                switchScript.weaponEnabled[1] = true;
+            }
+            else if (ammo.shotgunAmmo > 0)
+            {
+                shotgun.totalAmmo += ammo.shotgunAmmo;
+                displayInf.addMsg("Added " + ammo.shotgunAmmo + " shotgun ammo.");
 
+                shotgun.isEnabled = 1;
+                switchScript.weaponEnabled[2] = true;
+            }
+            else if (ammo.sniperAmmo > 0)
+            {
+                sniper.totalAmmo += ammo.sniperAmmo;
+                displayInf.addMsg("Added " + ammo.sniperAmmo + " sniper ammo.");
+
+                sniper.isEnabled = 1;
+                switchScript.weaponEnabled[3] = true;
+            }
+            else if (ammo.armor > 0)
+            {
+                statsScript.armor += ammo.armor;
+                displayInf.addMsg("Added " + ammo.armor + " armor.");
+            }
+            
             Destroy(ammoObj);
-        }
-
-        if (pistol.totalAmmo > 0)
-        {
-            Debug.Log("enable pistol");
-            pistol.isEnabled = 1;
-            switchScript.weaponEnabled[0] = true;
-        }
-        if (rifle.totalAmmo > 0)
-        {
-            Debug.Log("rifle pistol");
-            rifle.isEnabled = 1;
-            switchScript.weaponEnabled[1] = true;
-        }
-        if (shotgun.totalAmmo > 0)
-        {
-            Debug.Log("shotgun pistol");
-            shotgun.isEnabled = 1;
-            switchScript.weaponEnabled[2] = true;
-        }
-        if (sniper.totalAmmo > 0)
-        {
-            Debug.Log("sniper pistol");
-            sniper.isEnabled = 1;
-            switchScript.weaponEnabled[3] = true;
         }
     }
 }
