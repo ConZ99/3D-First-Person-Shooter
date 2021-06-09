@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -135,7 +135,7 @@ public class Interactable : MonoBehaviour
                     mText.text = "I found the tools!!\nIf i remember correctly there should be a way out further in.\nThere's a hospital on the other side.\nI should be able to find some drugs or even someone to help the mechanic with his wound.\nI need to get there ASAP, I don't know how much longer I can keep this up.";
                     break;
                 case 5:
-                    mText.text = "Hey! You, yes you!\nYou look like you know how to use those guns pretty well.\n Thank you for saving me.\nWe have to get out of there as soon as we can.\nThese guys are using some kind of bio-weapon on the people. My collegues.. they all.. oh god..\nI'll do whatever I can to help you and get out of this hellish place.\nLet's go!";
+                    mText.text = "Hey! You, yes you!\nYou look like you know how to use those guns pretty well.\n Thank you for saving me. I was hiding from these dangerous guys for hours!\nWe have to get out of there as soon as we can.\nThese guys are using some kind of bio-weapon on the people. My collegues.. they all.. oh god..\nI'll do whatever I can to help you and get out of this hellish place.\nLet's go!";
                     break;
                 default:
                     mText.text = "Level 5";
