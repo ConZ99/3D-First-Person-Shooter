@@ -11,7 +11,27 @@ public class Target : MonoBehaviour
 
     private bool isPlayer = false;
     private float timer = 0;
-    private float timeToRecover = 5;
+    private float timeToRecover = 5f;
+
+    private void Awake()
+    {
+        if (this.CompareTag("Player") != true)
+        {
+            int difficulty = PlayerPrefs.GetInt("difficulty", 2);
+            if (difficulty == 1)
+            {
+                health = 100f;
+            }
+            else if (difficulty == 2)
+            {
+                health = 120f;
+            }
+            else if (difficulty == 3)
+            {
+                health = 150f;
+            }
+        }
+    }
 
     private void Start()
     {

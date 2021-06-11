@@ -6,10 +6,10 @@ public class AIGun : MonoBehaviour
 {
     public Animator animator;
 
-    public float damage = 1f;
+    public float damage = 15f;
     public float range = 100f;
     public int cartidgeCapacity = 7;
-    public int totalAmmo = 21;
+    public int totalAmmo = 28;
     public int currentAmmo = 7;
     public float reloadTime = 3f;
     private bool isReloading = false;
@@ -19,7 +19,33 @@ public class AIGun : MonoBehaviour
     public GameObject bulletHole;
     public GameObject impactEffect;
 
-    public float knifeDamage = 50f;
+    public float knifeDamage = 25f;
+
+    private void Awake()
+    {
+        int difficulty = PlayerPrefs.GetInt("difficulty", 2);
+        if (difficulty == 1)
+        {
+            knifeDamage = 25f;
+            totalAmmo = 28;
+            reloadTime = 3f;
+            damage = 15f;
+        }
+        else if (difficulty == 2)
+        {
+            knifeDamage = 45f;
+            totalAmmo = 35;
+            reloadTime = 2f;
+            damage = 25f;
+        }
+        else if (difficulty == 3)
+        {
+            knifeDamage = 65f;
+            totalAmmo = 42;
+            reloadTime = 1f;
+            damage = 45f;
+        }
+    }
 
     private void OnEnable()
     {

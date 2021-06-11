@@ -4973,7 +4973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6400308927854403773}
-  damage: 5
+  damage: 15
   range: 100
   cartidgeCapacity: 7
   totalAmmo: 28
@@ -4984,7 +4984,7 @@ MonoBehaviour:
   bulletHole: {fileID: 2366912275819422623, guid: d07f96b97aca789428fd6479cb9cef22,
     type: 3}
   impactEffect: {fileID: 100002, guid: f75efcef4bb42054abf94f8e5c701adc, type: 3}
-  knifeDamage: 50
+  knifeDamage: 25
 --- !u!82 &6400308927038672850
 AudioSource:
   m_ObjectHideFlags: 0

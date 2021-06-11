@@ -16,6 +16,8 @@ public class AIStatesNoGun : MonoBehaviour
     private float nextTimeToMelee = 0f;
     private bool isMelee = false;
 
+    public float damage = 15f;
+
     public AudioSource meleeSound;
 
     public enum State
@@ -25,6 +27,23 @@ public class AIStatesNoGun : MonoBehaviour
     };
     public State currentState;
     public State lastState;
+
+    private void Awake()
+    {
+        int difficulty = PlayerPrefs.GetInt("difficulty", 2);
+        if (difficulty == 1)
+        {
+            damage = 15f;
+        }
+        else if (difficulty == 2)
+        {
+            damage = 25f;
+        }
+        else if (difficulty == 3)
+        {
+            damage = 45f;
+        }
+    }
 
     private void Start()
     {
@@ -87,7 +106,7 @@ public class AIStatesNoGun : MonoBehaviour
         {
             Target target = hit_obj.transform.GetComponent<Target>();
             if (target != null)
-                target.TakeDamage(10f);
+                target.TakeDamage(damage);
         }
 
         yield return new WaitForSeconds(1f);
