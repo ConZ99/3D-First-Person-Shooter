@@ -9,14 +9,14 @@ public class GunSniper : MonoBehaviour
     private PlayerUI UI;
     public Animator animator;
 
-    public float damage = 25f;
+    public float damage = 200f;
     public float knifeDamage = 50f;
     public float range = 100f;
     public float knifeRange = 20f;
     public float knifeTime = 2f;
     public float reloadTime = 4f;
     private bool isReloading = false;
-    public int cartidgeCapacity = 10;
+    public int cartidgeCapacity = 5;
     public int totalAmmo = 30;
     public int currentAmmo = 10;
 

@@ -44,7 +44,7 @@ public class SaveSystem : MonoBehaviour
 
         PlayerPrefs.SetInt("current_weapon", switchScript.weaponNumber);
 
-        Debug.Log(PlayerPrefs.GetInt("pistol_enabled") + " " + PlayerPrefs.GetInt("ak_enabled") + " " + PlayerPrefs.GetInt("shotgun_enabled") + " " + PlayerPrefs.GetInt("sniper_enabled"));
+        //Debug.Log(PlayerPrefs.GetInt("pistol_enabled") + " " + PlayerPrefs.GetInt("ak_enabled") + " " + PlayerPrefs.GetInt("shotgun_enabled") + " " + PlayerPrefs.GetInt("sniper_enabled"));
     }
 
     public void Load()

@@ -26,7 +26,7 @@ public class GunAK : MonoBehaviour
     public GameObject bulletHole;
 
     public GameObject tacticalKnife;
-    public float recoilAmount = 0.01f;
+    public float recoilAmount = 0.05f;
 
     public float fireRate = 7f;
     private float nextTimeToFire = 0f;

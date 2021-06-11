@@ -43996,7 +43996,7 @@ MonoBehaviour:
   bulletHole: {fileID: 2366912275819422623, guid: d07f96b97aca789428fd6479cb9cef22,
     type: 3}
   tacticalKnife: {fileID: 4453824556374477567}
-  recoilAmount: 0.01
+  recoilAmount: 0.05
   fireRate: 7
   reloadSound: {fileID: 4453824557216898114}
   drawSound: {fileID: 4453824557216898115}
@@ -45518,13 +45518,13 @@ MonoBehaviour:
   fpsCamera: {fileID: 4453824556985913852}
   player: {fileID: 2885629433891798380}
   animator: {fileID: 4453824556109449560}
-  damage: 100
+  damage: 200
   knifeDamage: 50
   range: 150
   knifeRange: 5
   knifeTime: 2
   reloadTime: 3
-  cartidgeCapacity: 10
+  cartidgeCapacity: 5
   totalAmmo: 0
   currentAmmo: 0
   gunFlash: {fileID: 4453824555747212830}

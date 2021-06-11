@@ -184,6 +184,14 @@ public class Interactable : MonoBehaviour
         }
         else
         {
+            //distruge obiectele cu script Interactable ca sa nu mai dea eroare "target destroyed"
+            Object[] quest_objs = GameObject.FindGameObjectsWithTag("Quest");
+            for (int i = 0; i < quest_objs.Length; i++)
+            {
+                if (quest_objs[i] != this.gameObject)
+                    Destroy(quest_objs[i]);
+            }
+
             saveScript.Save();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
