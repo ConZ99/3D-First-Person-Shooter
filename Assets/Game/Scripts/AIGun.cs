@@ -29,21 +29,21 @@ public class AIGun : MonoBehaviour
             knifeDamage = 25f;
             totalAmmo = 28;
             reloadTime = 3f;
-            damage = 15f;
+            damage = 10f;
         }
         else if (difficulty == 2)
         {
             knifeDamage = 45f;
-            totalAmmo = 35;
+            totalAmmo = 28;
             reloadTime = 2f;
-            damage = 25f;
+            damage = 15f;
         }
         else if (difficulty == 3)
         {
             knifeDamage = 65f;
-            totalAmmo = 42;
+            totalAmmo = 28;
             reloadTime = 1f;
-            damage = 45f;
+            damage = 25f;
         }
     }
 

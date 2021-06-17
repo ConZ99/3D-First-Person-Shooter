@@ -40,7 +40,6 @@ public class Interactable : MonoBehaviour
         qtItems = GameObject.FindGameObjectsWithTag("Story");
         if (qtItems.Length == 1){
             storyText = qtItems[0];
-            //storyText.SetActive(false);
         }
     }
 
@@ -71,7 +70,7 @@ public class Interactable : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         weaponCamera.SetActive(false);
-}
+    }
 
     void resume()
     {
@@ -123,22 +122,22 @@ public class Interactable : MonoBehaviour
             switch (level)
             {
                 case 1:
-                    mText.text = "Hello, hey!\nOh thank god!\nSomeone alive and breathing! everyone was taken! We have to get out.\nMy van broke down and I cant fix it, we need tools and someone to help us with fixing it.\nYou have to go to the city and find the mechanic at his shop, be careful though, I've heard gunshots coming from there. I think that those terrorists are still around here somewhere.";
+                    mText.text = "Hey!\nOh, thank God!\nSomeone alive and breathing! Everyone was taken! We have to get out.\nMy van broke down and I cannot fix it myself. We need tools and someone to help us with fixing it.\nYou need to go to the city and find the mechanic at his shop. Be careful though because I've heard gunshots coming from there. I think that those terrorists are still around there somewhere.";
                     break;
                 case 2:
-                    mText.text = "Hmm.. there's no one here.\nThis note says that the mechanic left his shop along with his tools and took refuge in his summer house near the lake.\nLake 'Jonson'? That should be north from here.\nThank the stars that there's a car outside, i think that it has some gas. It should be enough to get me to the lake.\nI have to hurry!";
+                    mText.text = "Hmm... there's no one here.\nThis note says that the mechanic left his shop along with his tools and took refuge in his summer house near the lake.\nLake Johnson? That should be north from here.\nThank the stars that there's a car outside and I think that it has some gas as well. It should be enough to get me to the lake.\nI must hurry!";
                     break;
                 case 3:
-                    mText.text = "*sob sob* thank you stranger..\nThey took me hostage and they stole everything I had.\nYou say that you need me and my.. *grunt* tools?\nAs you can clearly see.. I've been shot and my tools are nowhere to be seen.\nI saw them going into the crypt in the graveyard with them.\nBe very careful, those creatures are lurking around, I think that it's their doing.\nHelp me get to the entrance, I can catch my breath there, just please clear out those creatures first.";
+                    mText.text = "*sob sob* Thank you, stranger...\nThey took me hostage and they stole everything I had.\nYou say that you need me and my... *grunt* tools?\nAs you can clearly see.. I've been shot and my tools no longer in my possession.\nI saw them going into the crypt in the graveyard with them.\nBe very careful, those creatures are lurking around. I think that's their doing.\nHelp me get to the entrance, I can catch my breath there... Just please clear out those creatures first.";
                     break;
                 case 4:
-                    mText.text = "I found the tools!!\nIf i remember correctly there should be a way out further in.\nThere's a hospital on the other side.\nI should be able to find some drugs or even someone to help the mechanic with his wound.\nI need to get there ASAP, I don't know how much longer I can keep this up.";
+                    mText.text = "I found the tools!!\nIf I remember correctly, there should be a way out further in.\nThere's also a hospital on the other side.\nI should be able to find some drugs or even someone to help the mechanic with his wound.\nI need to get there ASAP. I don't know how much longer I can keep this up..";
                     break;
                 case 5:
-                    mText.text = "Hey! You, yes you!\nYou look like you know how to use those guns pretty well.\n Thank you for saving me. I was hiding from these dangerous guys for hours!\nWe have to get out of there as soon as we can.\nThese guys are using some kind of bio-weapon on the people. My collegues.. they all.. oh god..\nI'll do whatever I can to help you and get out of this hellish place.\nLet's go!";
+                    mText.text = "Hey! You! Yes, you!\nLooks like you know how to use those guns pretty well!\n Thank you for saving me. I was hiding from these dangerous guys for hours!\nWe have to get out of here as soon as we can.\nThese guys are using some kind of bio-weapon on the people. My collegues.. they all.. *sob* (again, poti sa o scoti)oh God..\nI'll do whatever I can to help you and get out of this hellish place.\nLet's go!";
                     break;
                 default:
-                    mText.text = "Level 5";
+                    mText.text = "Out of bounds";
                     break;
             }
         }        
@@ -150,17 +149,12 @@ public class Interactable : MonoBehaviour
         nav.destination = currentWaypoint.position;
         nav.stoppingDistance = 1.2f; 
         nav.isStopped = false;
-
-        //if (!walkingSound.isPlaying)
-            //walkingSound.Play();
     }
 
     public void StopMoving()
     {
         currentWaypoint = null;
         nav.isStopped = true;
-
-        //walkingSound.Stop();
     }
 
     void LookAtTarget()

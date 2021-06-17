@@ -1320,7 +1320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &332585168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1718,14 +1718,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\tThe year is 2136, after more than one century of global peace, the Third
-    World War came into being, catching the civilians and military by complete surprise.\r\n\tThe
-    conflict worsening drastically leads to the use of nuclear and biological weapons.
-    For the civilians in a small North American city the nightmare has just begun.
-    Over night the city was invaded by the enemy forces, and the majority of the
-    population was either killed or suffered extensive mutations from the biological
-    weaponry.\r\n\tJohn Doe, ex-military and FBI agent is caught in the middle of
-    the conflict and needs to find a way out for himself and any survivor that he
-    may find, this task too risky to be completed by anyone else without his expertise."
+    World War came into being, catching the civilians and military by complete surprise.\n\tThe
+    conflict continues to worsen, leading to the use of nuclear and biological weapons.
+    Thus, for the civilians in a small North American city, the nightmare has just
+    begun. Overnight, the city was invaded by the enemy forces and the majority of
+    the population was either killed or suffered extensive mutations from the biological
+    weaponry.\n    \tJohn Doe, ex-military and FBI agent, is caught in the middle
+    of the conflict and needs to find a way out for himself and any survivor that
+    he may find, this task being far too risky to be completed by anyone else without
+    his expertise."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1753,8 +1754,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1770,7 +1771,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 631
+  m_firstOverflowCharacterIndex: 719
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1794,10 +1795,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 499750907}
-    characterCount: 722
+    characterCount: 741
     spriteCount: 0
-    spaceCount: 126
-    wordCount: 125
+    spaceCount: 133
+    wordCount: 128
     linkCount: 0
     lineCount: 12
     pageCount: 1
@@ -2131,7 +2132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &534941633
 RectTransform:
   m_ObjectHideFlags: 0
